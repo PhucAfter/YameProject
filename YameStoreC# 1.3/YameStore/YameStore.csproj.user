@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Bankingonline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Chitietdonhangonline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dangki.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Donhangonline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Frm_Quanli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Hinhthucthanhtoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Passwordbankingonline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="QL_Kho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="QL_Nhanvien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Thanhtoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Baohanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Frm_Nhanvien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Thanhvienvip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Thongke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Tracuu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
