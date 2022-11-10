@@ -23,7 +23,7 @@ namespace YameStore
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            
+            this.Focus();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -137,6 +137,11 @@ namespace YameStore
                 pictureBox3.BringToFront();
                 txt_password.PasswordChar = '\0';
             }
+        }
+
+        private void label6_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
