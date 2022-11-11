@@ -279,14 +279,14 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(760, 118);
+            this.groupBox1.Size = new System.Drawing.Size(924, 118);
             this.groupBox1.TabIndex = 43;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nhập thông tin sản phẩm:";
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(533, 45);
+            this.button7.Location = new System.Drawing.Point(594, 48);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(97, 39);
             this.button7.TabIndex = 17;
@@ -296,7 +296,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(421, 45);
+            this.button1.Location = new System.Drawing.Point(482, 48);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 39);
             this.button1.TabIndex = 16;
@@ -306,7 +306,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(228, 51);
+            this.textBox4.Location = new System.Drawing.Point(289, 54);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(166, 29);
             this.textBox4.TabIndex = 15;
@@ -314,7 +314,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(110, 87);
+            this.label9.Location = new System.Drawing.Point(171, 90);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(0, 21);
             this.label9.TabIndex = 1;
@@ -322,7 +322,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(110, 54);
+            this.label8.Location = new System.Drawing.Point(171, 57);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(107, 21);
             this.label8.TabIndex = 0;
@@ -334,7 +334,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(6, 151);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(760, 243);
+            this.dataGridView1.Size = new System.Drawing.Size(924, 243);
             this.dataGridView1.TabIndex = 42;
             // 
             // label6
@@ -379,7 +379,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(756, 581);
+            this.button5.Location = new System.Drawing.Point(882, 581);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(97, 39);
             this.button5.TabIndex = 30;
@@ -388,7 +388,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(642, 581);
+            this.button6.Location = new System.Drawing.Point(768, 581);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(97, 39);
             this.button6.TabIndex = 45;
@@ -406,7 +406,7 @@
             this.tabControl1.Location = new System.Drawing.Point(39, 120);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(817, 455);
+            this.tabControl1.Size = new System.Drawing.Size(944, 455);
             this.tabControl1.TabIndex = 46;
             // 
             // tabPage1
@@ -417,7 +417,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(809, 427);
+            this.tabPage1.Size = new System.Drawing.Size(936, 427);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Hiển thị";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -691,7 +691,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(889, 648);
+            this.ClientSize = new System.Drawing.Size(988, 631);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace YameStore
 {
@@ -32,7 +33,7 @@ namespace YameStore
         public void showData()
         {
             dt = new DataTable();
-            adapter = new SqlDataAdapter("SELECT SANPHAM_SIZE.MASP,TENSP,MASIZE,TENSIZE,DONGIA,SOLUONG,DONVI,GIAMPHANTRAM FROM SANPHAM_SIZE,SANPHAM WHERE SANPHAM_SIZE.MASP=SANPHAM.MASP AND SANPHAM_SIZE.MASP='" + textBox4.Text + "'", con);
+            adapter = new SqlDataAdapter("SELECT SANPHAM_SIZE.MASP,SANPHAM_SIZE.MASIZE,TENSP,TENSIZE,SOLUONG,DONGIA,DONVI,PHANTRAMGIAM FROM SANPHAM_SIZE,SANPHAM,SIZE WHERE SANPHAM_SIZE.MASP = SANPHAM.MASP AND SANPHAM_SIZE.MASIZE = SIZE.MASIZE AND SANPHAM_SIZE.MASP='" + textBox4.Text + "'", con);
             adapter.Fill(dt);
             dataGridView1.DataSource = dt;
         }
@@ -45,7 +46,7 @@ namespace YameStore
         public void showAll()
         {
             dtall = new DataTable();
-            adapterall = new SqlDataAdapter("SELECT SANPHAM_SIZE.MASP,MASIZE,TENSP,TENSIZE,SOLUONG,DONGIA,DONVI,GIAMPHANTRAM FROM SANPHAM_SIZE,SANPHAM WHERE SANPHAM_SIZE.MASP = SANPHAM.MASP", con);
+            adapterall = new SqlDataAdapter("SELECT SANPHAM_SIZE.MASP,SANPHAM_SIZE.MASIZE,TENSP,TENSIZE,SOLUONG,DONGIA,DONVI,PHANTRAMGIAM FROM SANPHAM_SIZE,SANPHAM,SIZE WHERE SANPHAM_SIZE.MASP = SANPHAM.MASP AND SANPHAM_SIZE.MASIZE = SIZE.MASIZE", con);
             adapterall.Fill(dtall);
             dataGridView1.DataSource = dtall;
         }
