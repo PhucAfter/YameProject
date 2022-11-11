@@ -308,7 +308,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ClientSize = new System.Drawing.Size(561, 484);
+            this.ClientSize = new System.Drawing.Size(558, 484);
             this.Controls.Add(this.groupBox1);
             this.Name = "Dangki";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
