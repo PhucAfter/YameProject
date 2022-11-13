@@ -35,7 +35,6 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -80,8 +79,24 @@
             this.button3 = new System.Windows.Forms.Button();
             this.textBox25 = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.textBox27 = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
@@ -99,6 +114,8 @@
             this.groupBox3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.tabPage6.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.SuspendLayout();
@@ -111,7 +128,6 @@
             this.groupBox2.Controls.Add(this.textBox7);
             this.groupBox2.Controls.Add(this.textBox6);
             this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox2);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label10);
@@ -174,13 +190,6 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(166, 29);
             this.textBox3.TabIndex = 26;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(184, 102);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(166, 29);
-            this.textBox2.TabIndex = 25;
             // 
             // label12
             // 
@@ -402,6 +411,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(39, 120);
             this.tabControl1.Name = "tabControl1";
@@ -428,7 +438,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(809, 427);
+            this.tabPage2.Size = new System.Drawing.Size(936, 427);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Thêm sản phẩm";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -439,7 +449,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(809, 427);
+            this.tabPage3.Size = new System.Drawing.Size(936, 427);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Xoá sản phẩm";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -517,9 +527,9 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 24);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(809, 427);
+            this.tabPage4.Size = new System.Drawing.Size(936, 427);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Xuất sản phẩm";
+            this.tabPage4.Text = "Nhập sản phẩm";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // groupBox4
@@ -539,7 +549,7 @@
             this.groupBox4.Size = new System.Drawing.Size(481, 232);
             this.groupBox4.TabIndex = 46;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Xuất:";
+            this.groupBox4.Text = "Nhập:";
             // 
             // textBox21
             // 
@@ -607,19 +617,121 @@
             this.label29.TabIndex = 0;
             this.label29.Text = "Mã sản phẩm:";
             // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.groupBox6);
+            this.tabPage6.Location = new System.Drawing.Point(4, 24);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(936, 427);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Xuất sản phẩm";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.textBox13);
+            this.groupBox6.Controls.Add(this.textBox14);
+            this.groupBox6.Controls.Add(this.label17);
+            this.groupBox6.Controls.Add(this.label18);
+            this.groupBox6.Controls.Add(this.button12);
+            this.groupBox6.Controls.Add(this.button13);
+            this.groupBox6.Controls.Add(this.textBox15);
+            this.groupBox6.Controls.Add(this.label19);
+            this.groupBox6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.groupBox6.Location = new System.Drawing.Point(94, 24);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(481, 232);
+            this.groupBox6.TabIndex = 47;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Xuất:";
+            // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(185, 114);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(165, 29);
+            this.textBox13.TabIndex = 27;
+            // 
+            // textBox14
+            // 
+            this.textBox14.Location = new System.Drawing.Point(185, 73);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(166, 29);
+            this.textBox14.TabIndex = 25;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(98, 117);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(76, 21);
+            this.label17.TabIndex = 22;
+            this.label17.Text = "Số lượng:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(109, 76);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(65, 21);
+            this.label18.TabIndex = 20;
+            this.label18.Text = "Mã size:";
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(349, 161);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(97, 39);
+            this.button12.TabIndex = 18;
+            this.button12.Text = "CẬP NHẬT";
+            this.button12.UseVisualStyleBackColor = true;
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(238, 161);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(97, 39);
+            this.button13.TabIndex = 17;
+            this.button13.Text = "Xóa SP";
+            this.button13.UseVisualStyleBackColor = true;
+            // 
+            // textBox15
+            // 
+            this.textBox15.Location = new System.Drawing.Point(185, 31);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(166, 29);
+            this.textBox15.TabIndex = 15;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(67, 34);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(107, 21);
+            this.label19.TabIndex = 0;
+            this.label19.Text = "Mã sản phẩm:";
+            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.groupBox5);
             this.tabPage5.Location = new System.Drawing.Point(4, 24);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(809, 427);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Cập nhật khuyến mãi";
+            this.tabPage5.Size = new System.Drawing.Size(936, 427);
+            this.tabPage5.TabIndex = 6;
+            this.tabPage5.Text = "Cập nhật sản phẩm";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.textBox12);
+            this.groupBox5.Controls.Add(this.label16);
+            this.groupBox5.Controls.Add(this.textBox11);
+            this.groupBox5.Controls.Add(this.label15);
+            this.groupBox5.Controls.Add(this.textBox10);
+            this.groupBox5.Controls.Add(this.label14);
             this.groupBox5.Controls.Add(this.textBox27);
             this.groupBox5.Controls.Add(this.label31);
             this.groupBox5.Controls.Add(this.button8);
@@ -630,15 +742,62 @@
             this.groupBox5.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox5.Location = new System.Drawing.Point(94, 24);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(482, 198);
-            this.groupBox5.TabIndex = 47;
+            this.groupBox5.Size = new System.Drawing.Size(482, 353);
+            this.groupBox5.TabIndex = 48;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Khuyến mãi";
-            this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
+            this.groupBox5.Text = "Cập nhật";
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(185, 171);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(166, 29);
+            this.textBox12.TabIndex = 35;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(50, 174);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(90, 21);
+            this.label16.TabIndex = 34;
+            this.label16.Text = "Đơn vị tính:";
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(185, 124);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(166, 29);
+            this.textBox11.TabIndex = 33;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(50, 127);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(68, 21);
+            this.label15.TabIndex = 32;
+            this.label15.Text = "Đơn giá:";
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(185, 77);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(166, 29);
+            this.textBox10.TabIndex = 31;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(50, 80);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(108, 21);
+            this.label14.TabIndex = 30;
+            this.label14.Text = "Tên sản phẩm:";
             // 
             // textBox27
             // 
-            this.textBox27.Location = new System.Drawing.Point(185, 74);
+            this.textBox27.Location = new System.Drawing.Point(185, 220);
             this.textBox27.Name = "textBox27";
             this.textBox27.Size = new System.Drawing.Size(166, 29);
             this.textBox27.TabIndex = 29;
@@ -646,7 +805,7 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(50, 77);
+            this.label31.Location = new System.Drawing.Point(50, 223);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(124, 21);
             this.label31.TabIndex = 24;
@@ -654,17 +813,16 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(350, 123);
+            this.button8.Location = new System.Drawing.Point(355, 255);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(97, 39);
             this.button8.TabIndex = 18;
             this.button8.Text = "CẬP NHẬT";
             this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(239, 123);
+            this.button11.Location = new System.Drawing.Point(244, 255);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(97, 39);
             this.button11.TabIndex = 17;
@@ -718,6 +876,9 @@
             this.tabPage4.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
@@ -746,7 +907,6 @@
         private TextBox textBox7;
         private TextBox textBox6;
         private TextBox textBox3;
-        private TextBox textBox2;
         private Label label12;
         private Label label11;
         private Label label10;
@@ -763,14 +923,6 @@
         private TabPage tabPage2;
         private TabPage tabPage3;
         private TabPage tabPage4;
-        private TabPage tabPage5;
-        private GroupBox groupBox5;
-        private TextBox textBox27;
-        private Label label31;
-        private Button button8;
-        private Button button11;
-        private TextBox textBox33;
-        private Label label37;
         private GroupBox groupBox3;
         private Button button9;
         private Button button10;
@@ -787,5 +939,29 @@
         private Button button3;
         private TextBox textBox25;
         private Label label29;
+        private TabPage tabPage6;
+        private GroupBox groupBox6;
+        private TextBox textBox13;
+        private TextBox textBox14;
+        private Label label17;
+        private Label label18;
+        private Button button12;
+        private Button button13;
+        private TextBox textBox15;
+        private Label label19;
+        private TabPage tabPage5;
+        private GroupBox groupBox5;
+        private TextBox textBox12;
+        private Label label16;
+        private TextBox textBox11;
+        private Label label15;
+        private TextBox textBox10;
+        private Label label14;
+        private TextBox textBox27;
+        private Label label31;
+        private Button button8;
+        private Button button11;
+        private TextBox textBox33;
+        private Label label37;
     }
 }
