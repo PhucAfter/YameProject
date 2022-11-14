@@ -214,7 +214,7 @@
             this.groupBox1.Size = new System.Drawing.Size(558, 179);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Nhập sản phẩm:";
+            this.groupBox1.Text = "Nhập mã thanh toán:";
             // 
             // numericUpDown1
             // 

@@ -38,6 +38,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txt_nameuser = new System.Windows.Forms.TextBox();
             this.label_home = new System.Windows.Forms.Label();
+            this.panel_center = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,6 +49,7 @@
             this.panel_left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel_top.SuspendLayout();
+            this.panel_center.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +65,7 @@
             this.panel_left.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel_left.Location = new System.Drawing.Point(0, 0);
             this.panel_left.Name = "panel_left";
-            this.panel_left.Size = new System.Drawing.Size(130, 450);
+            this.panel_left.Size = new System.Drawing.Size(129, 439);
             this.panel_left.TabIndex = 1;
             // 
             // button4
@@ -139,7 +141,7 @@
             this.panel_top.Controls.Add(this.label_home);
             this.panel_top.Location = new System.Drawing.Point(130, 0);
             this.panel_top.Name = "panel_top";
-            this.panel_top.Size = new System.Drawing.Size(670, 40);
+            this.panel_top.Size = new System.Drawing.Size(675, 40);
             this.panel_top.TabIndex = 2;
             this.panel_top.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_top_Paint);
             // 
@@ -175,86 +177,99 @@
             this.label_home.Text = "HOME";
             this.label_home.Click += new System.EventHandler(this.label_home_Click);
             // 
+            // panel_center
+            // 
+            this.panel_center.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_center.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_center.Controls.Add(this.pictureBox2);
+            this.panel_center.Controls.Add(this.label6);
+            this.panel_center.Controls.Add(this.label5);
+            this.panel_center.Controls.Add(this.label4);
+            this.panel_center.Controls.Add(this.label3);
+            this.panel_center.Controls.Add(this.label2);
+            this.panel_center.Controls.Add(this.label1);
+            this.panel_center.Location = new System.Drawing.Point(130, 40);
+            this.panel_center.Name = "panel_center";
+            this.panel_center.Size = new System.Drawing.Size(675, 399);
+            this.panel_center.TabIndex = 3;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::YameStore.Properties.Resources.LABEL;
-            this.pictureBox2.Location = new System.Drawing.Point(131, 178);
+            this.pictureBox2.Location = new System.Drawing.Point(4, 135);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(270, 102);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(131, 160);
+            this.label6.Location = new System.Drawing.Point(4, 117);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(122, 15);
-            this.label6.TabIndex = 12;
+            this.label6.TabIndex = 5;
             this.label6.Text = "Email: cskh@yame.vn";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(130, 130);
+            this.label5.Location = new System.Drawing.Point(3, 87);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(147, 15);
-            this.label5.TabIndex = 11;
+            this.label5.TabIndex = 4;
             this.label5.Text = "Điện thoại: (028) 3868 4857";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(130, 145);
+            this.label4.Location = new System.Drawing.Point(3, 102);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(147, 15);
-            this.label4.TabIndex = 10;
+            this.label4.TabIndex = 3;
             this.label4.Text = "Mua hàng: (028) 7307 1441";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(130, 115);
+            this.label3.Location = new System.Drawing.Point(3, 72);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(495, 15);
-            this.label3.TabIndex = 9;
+            this.label3.TabIndex = 2;
             this.label3.Text = "Địa chỉ đăng ký kinh doanh: 766/3B-3C Sư Vạn Hạnh (Nối dài), Phường 12, Quận 10, " +
     "TP.HCM";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(130, 100);
+            this.label2.Location = new System.Drawing.Point(3, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(667, 15);
-            this.label2.TabIndex = 8;
+            this.label2.TabIndex = 1;
             this.label2.Text = "Giấy CNĐKDN: 0310874914–Ngày cấp: 25/11/2011-Cơ quan cấp: Phòng Đăng Ký Kinh Doan" +
     "h–Sở Kế Hoạch và Đầu Tư TP.HCM";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(130, 85);
+            this.label1.Location = new System.Drawing.Point(3, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(195, 15);
-            this.label1.TabIndex = 7;
+            this.label1.TabIndex = 0;
             this.label1.Text = "© 2022 - CÔNG TY TNHH YAME VN";
             // 
             // Frm_Quanli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(805, 439);
+            this.Controls.Add(this.panel_center);
             this.Controls.Add(this.panel_top);
             this.Controls.Add(this.panel_left);
+            this.Location = new System.Drawing.Point(130, 40);
             this.Name = "Frm_Quanli";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -263,9 +278,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel_top.ResumeLayout(false);
             this.panel_top.PerformLayout();
+            this.panel_center.ResumeLayout(false);
+            this.panel_center.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -281,6 +297,7 @@
         private Label label7;
         private TextBox txt_nameuser;
         private Label label_home;
+        private Panel panel_center;
         private PictureBox pictureBox2;
         private Label label6;
         private Label label5;

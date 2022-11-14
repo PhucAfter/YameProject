@@ -39,11 +39,9 @@
             this.label10 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
@@ -144,11 +142,9 @@
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.textBox2);
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.textBox5);
             this.panel2.Controls.Add(this.textBox6);
             this.panel2.Controls.Add(this.textBox7);
             this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.textBox8);
             this.panel2.Controls.Add(this.textBox9);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.radioButton3);
@@ -166,10 +162,10 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.Location = new System.Drawing.Point(50, 200);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(50, 17);
+            this.label9.Size = new System.Drawing.Size(59, 20);
             this.label9.TabIndex = 21;
             this.label9.Text = "Họ tên:";
             // 
@@ -203,22 +199,14 @@
             this.button1.Text = "Đăng ký";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // textBox5
-            // 
-            this.textBox5.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox5.Location = new System.Drawing.Point(157, 169);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(115, 26);
-            this.textBox5.TabIndex = 19;
-            // 
             // textBox6
             // 
             this.textBox6.AccessibleName = "á";
             this.textBox6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.textBox6.Location = new System.Drawing.Point(51, 169);
+            this.textBox6.Location = new System.Drawing.Point(51, 171);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(100, 26);
+            this.textBox6.Size = new System.Drawing.Size(221, 26);
             this.textBox6.TabIndex = 18;
             this.textBox6.Text = "QLYAME";
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -234,42 +222,30 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label11.Location = new System.Drawing.Point(50, 146);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(89, 17);
+            this.label11.Size = new System.Drawing.Size(107, 20);
             this.label11.TabIndex = 17;
             this.label11.Text = "Mã nhân viên:";
-            // 
-            // textBox8
-            // 
-            this.textBox8.AccessibleName = "á";
-            this.textBox8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.textBox8.Location = new System.Drawing.Point(51, 269);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(100, 26);
-            this.textBox8.TabIndex = 4;
-            this.textBox8.Text = "quanli";
-            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox9
             // 
             this.textBox9.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox9.Location = new System.Drawing.Point(157, 269);
+            this.textBox9.Location = new System.Drawing.Point(51, 269);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(115, 26);
+            this.textBox9.Size = new System.Drawing.Size(221, 26);
             this.textBox9.TabIndex = 16;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label12.Location = new System.Drawing.Point(50, 249);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(66, 17);
+            this.label12.Size = new System.Drawing.Size(50, 20);
             this.label12.TabIndex = 5;
-            this.label12.Text = "Tài khoản:";
+            this.label12.Text = "Email:";
             // 
             // radioButton3
             // 
@@ -286,10 +262,10 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label13.Location = new System.Drawing.Point(50, 350);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(121, 17);
+            this.label13.Size = new System.Drawing.Size(144, 20);
             this.label13.TabIndex = 6;
             this.label13.Text = "Xác nhận mật khẩu:";
             // 
@@ -320,22 +296,22 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(50, 301);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 17);
+            this.label5.Size = new System.Drawing.Size(78, 20);
             this.label5.TabIndex = 12;
             this.label5.Text = "Mật khẩu:";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label16.Location = new System.Drawing.Point(51, 102);
+            this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label16.Location = new System.Drawing.Point(50, 95);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(123, 17);
+            this.label16.Size = new System.Drawing.Size(133, 20);
             this.label16.TabIndex = 13;
-            this.label16.Text = "Chọn loại tài khoản:";
+            this.label16.Text = "Chức vụ của bạn ?";
             // 
             // textBox10
             // 
@@ -531,7 +507,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(694, 555);
+            this.ClientSize = new System.Drawing.Size(1216, 667);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -583,11 +559,9 @@
         private Label label10;
         private TextBox textBox2;
         private Button button1;
-        private TextBox textBox5;
         private TextBox textBox6;
         private TextBox textBox7;
         private Label label11;
-        private TextBox textBox8;
         private TextBox textBox9;
         private Label label12;
         private RadioButton radioButton3;
