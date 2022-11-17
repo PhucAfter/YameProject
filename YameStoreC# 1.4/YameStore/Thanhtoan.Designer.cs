@@ -51,18 +51,12 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.textBox13 = new System.Windows.Forms.TextBox();
@@ -73,7 +67,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader8 = new System.Windows.Forms.ColumnHeader();
@@ -301,25 +294,6 @@
             this.textBox6.TabIndex = 20;
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(353, 830);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(97, 39);
-            this.button4.TabIndex = 19;
-            this.button4.Text = "Trở về";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(473, 830);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(97, 39);
-            this.button5.TabIndex = 21;
-            this.button5.Text = "Thanh toán";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -360,26 +334,6 @@
             this.label13.TabIndex = 25;
             this.label13.Text = "Giảm giá:";
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(328, 757);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(70, 21);
-            this.label14.TabIndex = 26;
-            this.label14.Text = "Voucher:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label15.Location = new System.Drawing.Point(328, 785);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(122, 21);
-            this.label15.TabIndex = 27;
-            this.label15.Text = "Số tiền phải thu:";
-            // 
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(871, 504);
@@ -399,20 +353,6 @@
             this.textBox9.TabIndex = 28;
             this.textBox9.Text = "0";
             this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(453, 755);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(117, 23);
-            this.textBox10.TabIndex = 29;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(453, 783);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(117, 23);
-            this.textBox11.TabIndex = 30;
             // 
             // textBox12
             // 
@@ -505,7 +445,6 @@
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader5,
             this.columnHeader6,
             this.columnHeader2,
             this.columnHeader8,
@@ -525,10 +464,6 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.VirtualListSize = 4;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "STT";
             // 
             // columnHeader6
             // 
@@ -591,7 +526,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 749);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.button7);
@@ -605,19 +540,13 @@
             this.Controls.Add(this.label17);
             this.Controls.Add(this.textBox12);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox10);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.groupBox1);
@@ -632,8 +561,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Thanhtoan";
             this.Text = "Thanh toán đơn hàng";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Thanhtoan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -669,18 +600,12 @@
         private PictureBox pictureBox2;
         private Label label10;
         private TextBox textBox6;
-        private Button button4;
-        private Button button5;
         private Label label11;
         private TextBox textBox7;
         private Label label12;
         private Label label13;
-        private Label label14;
-        private Label label15;
         private TextBox textBox8;
         private TextBox textBox9;
-        private TextBox textBox10;
-        private TextBox textBox11;
         private TextBox textBox12;
         private Label label16;
         private TextBox textBox13;
@@ -696,7 +621,6 @@
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
-        private ColumnHeader columnHeader5;
         private ColumnHeader columnHeader6;
         private ColumnHeader columnHeader7;
         private Button button7;

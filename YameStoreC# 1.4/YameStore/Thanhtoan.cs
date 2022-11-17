@@ -9,6 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using ListView = System.Windows.Forms.ListView;
 
@@ -18,8 +19,6 @@ namespace YameStore
     {
         SqlConnection con = new SqlConnection(@"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=YAME;Integrated Security=True");
         public string stdName { get; set; }
-        int counter = 0;
-
 
         public Thanhtoan()
         {
@@ -152,7 +151,7 @@ namespace YameStore
                 checkexists.Fill(dt);
                 if (dt.Rows[0][0].ToString() == "1")
                 {
-                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT TENSP,TENSIZE,DONGIA,GIAMPHANTRAM FROM SANPHAM_SIZE,SANPHAM WHERE SANPHAM_SIZE.MASP = SANPHAM.MASP AND SANPHAM_SIZE.MASP = '" + textBox4.Text.Substring(0, 7) + "' AND SANPHAM_SIZE.MASIZE = '" + textBox4.Text.Substring(7) + "'", con);
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT TENSP, TENSIZE, DONGIA, PHANTRAMGIAM FROM SANPHAM_SIZE, SANPHAM, SIZE WHERE SANPHAM_SIZE.MASP = SANPHAM.MASP AND SANPHAM_SIZE.MASIZE = SIZE.MASIZE AND SANPHAM_SIZE.MASP = '" + textBox4.Text.Substring(0, 7) + "' AND SANPHAM_SIZE.MASIZE = '" + textBox4.Text.Substring(7) + "'", con);
                     adapter.Fill(dt);
                     string mathanhtoan = textBox4.Text;
                     string tensp = dt.Rows[1][1].ToString();
@@ -173,8 +172,7 @@ namespace YameStore
                     string thanhtien = int_thanhtien.ToString();
 
                     ListViewItem item = new ListViewItem();
-                    item.Text = (++counter).ToString();
-                    item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = mathanhtoan });
+                    item.Text = mathanhtoan;
                     item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = tensp });
                     item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = tensize });
                     item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = soluong });
@@ -248,9 +246,9 @@ namespace YameStore
             int tonggiagiam = 0;
             for (int i = 0; i < listView1.Items.Count; i++)
             {
-                int soluong = Int32.Parse(listView1.Items[i].SubItems[4].Text);
-                int dongia = Int32.Parse(listView1.Items[i].SubItems[5].Text);
-                int thanhtien = Int32.Parse(listView1.Items[i].SubItems[7].Text);
+                int soluong = Int32.Parse(listView1.Items[i].SubItems[3].Text);
+                int dongia = Int32.Parse(listView1.Items[i].SubItems[4].Text);
+                int thanhtien = Int32.Parse(listView1.Items[i].SubItems[6].Text);
                 tonggiagiam += (soluong * dongia) - thanhtien;
             }
             textBox9.Text = tonggiagiam.ToString();
@@ -261,8 +259,8 @@ namespace YameStore
             int tonggiagoc = 0;
             for (int i = 0; i < listView1.Items.Count; i++)
             {
-                int soluong = Int32.Parse(listView1.Items[i].SubItems[4].Text);
-                int dongia = Int32.Parse(listView1.Items[i].SubItems[5].Text);
+                int soluong = Int32.Parse(listView1.Items[i].SubItems[3].Text);
+                int dongia = Int32.Parse(listView1.Items[i].SubItems[4].Text);
                 tonggiagoc += soluong * dongia;
             }
             textBox8.Text = tonggiagoc.ToString();
@@ -368,13 +366,13 @@ namespace YameStore
             string getmahd = textBox1.Text;
             for (int i = 0; i < listView1.Items.Count; i++)
             {
-                string mathanhvien = listView1.Items[i].SubItems[1].Text;
-                string getmasp = mathanhvien.Substring(0, 7);
-                string getmasize = mathanhvien.Substring(7);
-                string getsoluong = listView1.Items[i].SubItems[4].Text;
-                string getdongia = listView1.Items[i].SubItems[5].Text;
-                string getphantramgiam = listView1.Items[i].SubItems[6].Text;
-                string getthanhtien = listView1.Items[i].SubItems[7].Text;
+                string mathanhtoan = listView1.Items[i].SubItems[0].Text;
+                string getmasp = mathanhtoan.Substring(0, 7);
+                string getmasize = mathanhtoan.Substring(7);
+                string getsoluong = listView1.Items[i].SubItems[3].Text;
+                string getdongia = listView1.Items[i].SubItems[4].Text;
+                string getphantramgiam = listView1.Items[i].SubItems[5].Text;
+                string getthanhtien = listView1.Items[i].SubItems[6].Text;
                 string insertCTHD = @"INSERT INTO dbo.CTHD (MAHD,MASP,MASIZE,SOLUONG,DONGIA,PHANTRAMGIAM,THANHTIEN) VALUES ('" + getmahd + "','" + getmasp + "','" + getmasize + "'," + getsoluong + "," + getdongia + "," + getphantramgiam + "," + getthanhtien + ")";
                 SqlCommand cmd = new SqlCommand(insertCTHD, con);
                 cmd.ExecuteNonQuery();
@@ -454,18 +452,6 @@ namespace YameStore
             }
         }
 
-        public void insertDOANHTHU()
-        {
-            con.Open();
-            string getmahd = textBox1.Text;
-            string getngaylap = dateTimePicker1.Value.Date.ToString("MM/dd/yyyy");
-            string getsotien = textBox13.Text;
-            string insertDOANHTHU = @"INSERT INTO dbo.DOANHTHU (MAHD,NGAY,SOTIEN) VALUES ('"+ getmahd + "','" + getngaylap + "'," + getsotien + ")";
-            SqlCommand cmd = new SqlCommand(insertDOANHTHU, con);
-            cmd.ExecuteNonQuery();
-            con.Close();
-        }
-
         //REALOAD
         private void button7_Click(object sender, EventArgs e)
         {
@@ -486,7 +472,6 @@ namespace YameStore
                 insertVOUCHER();
                 updateVOUCHER();
                 updateVITHANHVIEN();
-                insertDOANHTHU();
                 MessageBox.Show("Thanh toán hoàn tất");
 
                 Frm_Nhanvien nv = new Frm_Nhanvien();

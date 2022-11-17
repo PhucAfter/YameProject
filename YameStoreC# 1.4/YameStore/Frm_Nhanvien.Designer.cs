@@ -309,6 +309,7 @@
             this.Controls.Add(this.panel_center);
             this.Controls.Add(this.panel_top);
             this.Controls.Add(this.panel_left);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Frm_Nhanvien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Nhanvien";
