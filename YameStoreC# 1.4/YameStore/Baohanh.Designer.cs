@@ -43,14 +43,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader8 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -74,19 +66,16 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -110,8 +99,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 39);
             this.button1.TabIndex = 16;
-            this.button1.Text = "Tìm kiếm:";
+            this.button1.Text = "Tìm kiếm";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox4
             // 
@@ -237,57 +227,6 @@
             this.textBox6.TabIndex = 38;
             this.textBox6.TabStop = false;
             // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader6,
-            this.columnHeader2,
-            this.columnHeader8,
-            this.columnHeader1,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader7});
-            this.listView1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.listView1.FullRowSelect = true;
-            this.listView1.GridLines = true;
-            this.listView1.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.listView1.LabelWrap = false;
-            this.listView1.Location = new System.Drawing.Point(450, 148);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(717, 214);
-            this.listView1.TabIndex = 40;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.VirtualListSize = 4;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Mã Thanh Toán";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Tên Sản Phẩm";
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Size";
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Số Lượng";
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Đơn giá";
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Giảm %";
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Thành Tiền";
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.numericUpDown1);
@@ -357,7 +296,7 @@
             this.listView2.LabelWrap = false;
             this.listView2.Location = new System.Drawing.Point(450, 401);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(717, 112);
+            this.listView2.Size = new System.Drawing.Size(924, 112);
             this.listView2.TabIndex = 42;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
@@ -403,7 +342,7 @@
             // 
             // textBox13
             // 
-            this.textBox13.Location = new System.Drawing.Point(142, 611);
+            this.textBox13.Location = new System.Drawing.Point(142, 712);
             this.textBox13.Name = "textBox13";
             this.textBox13.ReadOnly = true;
             this.textBox13.Size = new System.Drawing.Size(117, 23);
@@ -415,7 +354,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label17.Location = new System.Drawing.Point(17, 613);
+            this.label17.Location = new System.Drawing.Point(17, 714);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(122, 21);
             this.label17.TabIndex = 50;
@@ -423,7 +362,7 @@
             // 
             // textBox12
             // 
-            this.textBox12.Location = new System.Drawing.Point(142, 582);
+            this.textBox12.Location = new System.Drawing.Point(142, 683);
             this.textBox12.Name = "textBox12";
             this.textBox12.ReadOnly = true;
             this.textBox12.Size = new System.Drawing.Size(117, 23);
@@ -435,7 +374,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label16.Location = new System.Drawing.Point(17, 584);
+            this.label16.Location = new System.Drawing.Point(17, 685);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(111, 21);
             this.label16.TabIndex = 48;
@@ -443,7 +382,7 @@
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(142, 553);
+            this.textBox9.Location = new System.Drawing.Point(142, 654);
             this.textBox9.Name = "textBox9";
             this.textBox9.ReadOnly = true;
             this.textBox9.Size = new System.Drawing.Size(117, 23);
@@ -453,7 +392,7 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(142, 524);
+            this.textBox7.Location = new System.Drawing.Point(142, 625);
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(117, 23);
@@ -465,7 +404,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(17, 555);
+            this.label13.Location = new System.Drawing.Point(17, 656);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(75, 21);
             this.label13.TabIndex = 46;
@@ -475,7 +414,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(17, 528);
+            this.label14.Location = new System.Drawing.Point(17, 629);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(102, 21);
             this.label14.TabIndex = 45;
@@ -483,70 +422,60 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7});
-            this.dataGridView1.Location = new System.Drawing.Point(450, 524);
+            this.dataGridView1.Location = new System.Drawing.Point(450, 148);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 100;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(717, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(924, 214);
             this.dataGridView1.TabIndex = 52;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // Column1
+            // dataGridView2
             // 
-            this.Column1.HeaderText = "Tên Sản Phẩm";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(450, 524);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.RowTemplate.Height = 25;
+            this.dataGridView2.Size = new System.Drawing.Size(924, 150);
+            this.dataGridView2.TabIndex = 53;
             // 
-            // Column2
+            // button2
             // 
-            this.Column2.HeaderText = "Size";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
+            this.button2.Location = new System.Drawing.Point(311, 524);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(97, 39);
+            this.button2.TabIndex = 54;
+            this.button2.Text = "Xác nhận";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // Column3
+            // dateTimePicker1
             // 
-            this.Column3.HeaderText = "Số Lượng";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Đơn Giá";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Phần Trăm Giảm";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Thành Tiền";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column7.HeaderText = "Xem";
-            this.Column7.Name = "Column7";
-            this.Column7.Text = "chitiet";
-            this.Column7.ToolTipText = "Chi tiết";
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy hh:mm:ss";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(450, 83);
+            this.dateTimePicker1.MinDate = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(164, 23);
+            this.dateTimePicker1.TabIndex = 55;
+            this.dateTimePicker1.Value = new System.DateTime(2022, 10, 21, 14, 13, 8, 0);
             // 
             // Baohanh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 703);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox13);
             this.Controls.Add(this.label17);
@@ -559,7 +488,6 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.listView2);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -582,6 +510,7 @@
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -605,15 +534,7 @@
         private Label label3;
         private Label label4;
         private TextBox textBox6;
-        private ListView listView1;
         private ColumnHeader columnHeader5;
-        private ColumnHeader columnHeader6;
-        private ColumnHeader columnHeader2;
-        private ColumnHeader columnHeader8;
-        private ColumnHeader columnHeader1;
-        private ColumnHeader columnHeader3;
-        private ColumnHeader columnHeader4;
-        private ColumnHeader columnHeader7;
         private GroupBox groupBox3;
         private TextBox textBox8;
         private Label label10;
@@ -636,12 +557,15 @@
         private Label label13;
         private Label label14;
         private DataGridView dataGridView1;
+        private DataGridView dataGridView2;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column6;
-        private DataGridViewButtonColumn Column7;
+        private DataGridViewTextBoxColumn Column7;
+        private Button button2;
+        private DateTimePicker dateTimePicker1;
     }
 }
