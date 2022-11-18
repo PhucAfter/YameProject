@@ -83,6 +83,27 @@ namespace YameStore.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gửi_email {
+            get {
+                object obj = ResourceManager.GetObject("gửi email", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kisspng_email_computer_icons_message_bounce_address_email_icon_5ac24c369ca033_5563588615226829346416 {
+            get {
+                object obj = ResourceManager.GetObject("kisspng-email-computer-icons-message-bounce-address-email-icon-5ac24c369ca033.556" +
+                        "3588615226829346416", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LABEL {
             get {
                 object obj = ResourceManager.GetObject("LABEL", resourceCulture);

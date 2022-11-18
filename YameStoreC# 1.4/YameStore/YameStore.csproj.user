@@ -28,6 +28,9 @@
     <Compile Update="QL_Nhanvien.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Quenmatkhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Thanhtoan.cs">
       <SubType>Form</SubType>
     </Compile>

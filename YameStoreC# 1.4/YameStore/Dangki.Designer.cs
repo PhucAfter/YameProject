@@ -295,7 +295,7 @@
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Image = global::YameStore.Properties.Resources.yame;
-            this.pictureBox1.Location = new System.Drawing.Point(16, 110);
+            this.pictureBox1.Location = new System.Drawing.Point(18, 101);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(225, 225);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;

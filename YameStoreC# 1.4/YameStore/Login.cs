@@ -1,11 +1,14 @@
 ﻿using Microsoft.VisualBasic.ApplicationServices;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
+
 namespace YameStore
 {
     public partial class login : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=YAME;Integrated Security=True");
+        int flag = -1;
         public login()
         {
             InitializeComponent();
@@ -141,7 +144,33 @@ namespace YameStore
 
         private void label6_Click_1(object sender, EventArgs e)
         {
-
+            Quenmatkhau dk = new Quenmatkhau();
+            dk.Show();
+            this.Hide();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            flag *= -1;
+            if (flag == 1)
+            {
+                flag *= -1;
+                panel1.Show();
+                panel2.Hide();
+            }     
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            flag *= -1;
+            if (flag == 1)
+            {
+                flag *= -1;
+                panel2.Show();
+                panel1.Hide();
+            }
+        }
+
+        
     }
 }
