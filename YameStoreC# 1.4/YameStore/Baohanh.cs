@@ -53,11 +53,11 @@ namespace YameStore
                 DateTime ngaybaohanh = ngaylap.AddDays(7);
                 DateTime ngayhomnay = dateTimePicker1.Value.Date;
                 int checkhethan = DateTime.Compare(ngayhomnay, ngaybaohanh);
-                if (checkhethan > 0)
+                /*if (checkhethan > 0)
                 {
                     MessageBox.Show("Hoá đơn hết hạn đổi trả");
                     return;
-                }
+                }*/
 
                 DataTable show = new DataTable();
                 SqlDataAdapter adapter = new SqlDataAdapter("SELECT CONCAT(CTHD.MASP,CTHD.MASIZE) AS 'Mã Thanh Toán', TENSP, TENSIZE, SOLUONG, CTHD.DONGIA, CTHD.PHANTRAMGIAM, THANHTIEN FROM CTHD, SANPHAM, SIZE WHERE CTHD.MASP = SANPHAM.MASP AND CTHD.MASIZE = SIZE.MASIZE AND MAHD='" + textBox4.Text + "'", con);
