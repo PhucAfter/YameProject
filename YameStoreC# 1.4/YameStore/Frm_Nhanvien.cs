@@ -63,7 +63,6 @@ namespace YameStore
         private void button3_Click(object sender, EventArgs e)
         {
             Baohanh frM = new Baohanh();
-            frM.stdUser_baohanh = textBox1.Text;
             frM.Show();  //hiển thị form main
             this.Close();
 

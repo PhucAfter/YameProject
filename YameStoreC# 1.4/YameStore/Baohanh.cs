@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using ListView = System.Windows.Forms.ListView;
 
 namespace YameStore
 {
@@ -17,25 +19,14 @@ namespace YameStore
     {
         SqlConnection con = new SqlConnection(@"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=YAME;Integrated Security=True");
 
-        public string stdUser_baohanh { get; set; }
-
         public Baohanh()
         {
             InitializeComponent();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Frm_Nhanvien frM = new Frm_Nhanvien();
-            frM.stdUser_home = textBox6.Text;
-
-            frM.Show();  //hiển thị form main
-            this.Close();
-        }
-
         private void Baohanh_Load(object sender, EventArgs e)
         {
-            textBox6.Text = stdUser_baohanh;
+            ResizeListViewColumns(listView1);
             dateTimePicker1.Value = DateTime.Now;
         }
 
@@ -63,12 +54,23 @@ namespace YameStore
                 SqlDataAdapter adapter = new SqlDataAdapter("SELECT CONCAT(CTHD.MASP,CTHD.MASIZE) AS 'Mã Thanh Toán', TENSP, TENSIZE, SOLUONG, CTHD.DONGIA, CTHD.PHANTRAMGIAM, THANHTIEN FROM CTHD, SANPHAM, SIZE WHERE CTHD.MASP = SANPHAM.MASP AND CTHD.MASIZE = SIZE.MASIZE AND MAHD='" + textBox4.Text + "'", con);
                 adapter.Fill(show);
                 dataGridView1.DataSource = show;
-                DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-                btn.HeaderText = "Đổi trả";
-                btn.Text = "Chọn";
-                btn.Name = "btn";
-                btn.UseColumnTextForButtonValue = true;
-                dataGridView1.Columns.Add(btn);
+
+                DataGridViewCheckBoxColumn checkColumn = new DataGridViewCheckBoxColumn();
+                checkColumn.HeaderText = "Đổi trả";
+                checkColumn.Name = "check";
+                checkColumn.Width = 50;
+                checkColumn.ReadOnly = false;
+                DataGridViewTextBoxColumn txtColumn = new DataGridViewTextBoxColumn();
+                txtColumn.HeaderText = "Số lượng đổi";
+                txtColumn.Name = "txt";
+
+
+                dataGridView1.Columns.Add(checkColumn);
+                dataGridView1.Columns["check"].ReadOnly = false;
+
+                dataGridView1.Columns.Add(txtColumn);
+                dataGridView1.Columns["txt"].ReadOnly = false;
+
                 textBox4.Text = "";
             }
             else
@@ -77,12 +79,115 @@ namespace YameStore
             }
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            if (e.ColumnIndex == 7)
+            Frm_Nhanvien nv = new Frm_Nhanvien();
+
+            this.Hide();
+            nv.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //221122000000000004
+            reloadListView();
+
+            string nullNum = string.Empty;
+            string validNum = string.Empty;
+            string rangeNum = string.Empty;
+            int tongtien = 0;
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-                textBox5.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                bool isSelected = Convert.ToBoolean(row.Cells["check"].Value);
+                Object soluongColumn = row.Cells["txt"].Value;
+                string mathanhtoan = row.Cells[0].Value.ToString();
+                int soluong = Int32.Parse(row.Cells[3].Value.ToString());
+                if (isSelected && soluongColumn == null)
+                {
+                    nullNum += mathanhtoan + ", ";
+                }
+                else if (isSelected && soluongColumn != null)
+                {
+                    int soluongdoi = validNumber(soluongColumn.ToString());
+                    if (soluongdoi == 0)
+                    {
+                        validNum += mathanhtoan + ", ";
+                    }
+                    else if (soluongdoi != 0 && soluongdoi > soluong)
+                    {
+                        rangeNum += mathanhtoan + ", ";
+                    }
+                    else if (soluongdoi != 0 && soluongdoi <= soluong)
+                    {
+                        int dongia = Int32.Parse(row.Cells[4].Value.ToString());
+                        double phantramgiam = Double.Parse(row.Cells[5].Value.ToString());
+                        string masp = mathanhtoan.Substring(0, 7);
+                        string masize = mathanhtoan.Substring(7);
+                        double thanhtien = (soluongdoi * dongia) * (1 - phantramgiam);
+
+                        ListViewItem item = new ListViewItem();
+                        
+                        item.Text = masp;
+                        item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = masize });
+                        item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = soluongdoi.ToString() });
+                        item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = dongia.ToString() });
+                        item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = phantramgiam.ToString() });
+                        item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = thanhtien.ToString() });
+
+                        listView1.Items.Add(item);
+                        tongtien += (int)thanhtien;
+                    }
+                }
+            }
+            textBox1.Text = tongtien.ToString();
+            char[] charsToTrim = { ',', ' ' };
+            if (nullNum != "")
+            {
+                MessageBox.Show("Mã thanh toán: " + nullNum.Trim(charsToTrim) + Environment.NewLine + "Lỗi chưa nhập số lượng cần đổi!");
+            }
+            else if (rangeNum != "")
+            {
+                MessageBox.Show("Mã thanh toán: " + rangeNum.Trim(charsToTrim) + Environment.NewLine + "Lỗi số lượng cần đổi nhiều hơn số lượng trong hoá đơn!");
+            }
+            else if (validNum != "")
+            {
+                MessageBox.Show("Mã thanh toán: " + validNum.Trim(charsToTrim) + Environment.NewLine + "Lỗi số lượng cần đổi phải không phải là số!");
+            }
+            else if (listView1.Items.Count == 0)
+            {
+                MessageBox.Show("Chưa có sản phẩm cần đổi!");
+            }
+        }
+
+        private void ResizeListViewColumns(ListView lv)
+        {
+            foreach (ColumnHeader column in lv.Columns)
+            {
+                column.Width = -2;
+            }
+        }
+
+        private void reloadListView()
+        {
+            int count = listView1.Items.Count;
+            for (int i = 0; i < count; i++)
+            {
+                listView1.Items.RemoveAt(0);
+            }
+        }
+
+        private int validNumber(string a)
+        {
+            int parsedValue;
+            if (!int.TryParse(a, out parsedValue))
+            {
+                return 0;
+            }
+            else
+            {
+                parsedValue = Int32.Parse(a);
+                return parsedValue;
             }
         }
     }

@@ -101,7 +101,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // groupBox1
             // 
@@ -117,7 +116,6 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hệ thống bán hàng Yame Store";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label15
             // 
@@ -193,7 +191,6 @@
             this.label3.Size = new System.Drawing.Size(183, 32);
             this.label3.TabIndex = 7;
             this.label3.Text = "ĐĂNG NHẬP";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // pictureBox5
             // 
@@ -287,7 +284,6 @@
             this.label1.Size = new System.Drawing.Size(72, 17);
             this.label1.TabIndex = 5;
             this.label1.Text = "Tài khoản:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 

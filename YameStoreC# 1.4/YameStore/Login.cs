@@ -32,29 +32,9 @@ namespace YameStore
             panel4.Visible = false;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             this.Focus();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -323,7 +303,6 @@ namespace YameStore
                 matv = "QLYAME" + stthientai;
                 textBox6.Text = matv;
             }
-            
         }
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)

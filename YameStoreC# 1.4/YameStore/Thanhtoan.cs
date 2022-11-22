@@ -181,6 +181,7 @@ namespace YameStore
                     item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = thanhtien });
                     listView1.Items.Add(item);
                     textBox4.Text = "";
+                    numericUpDown1.Value = 1;
                     loadTongTien();
                     loadGiaGiam();
                     loadVoucher();
