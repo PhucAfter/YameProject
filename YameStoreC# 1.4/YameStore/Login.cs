@@ -30,6 +30,7 @@ namespace YameStore
             panel1.Visible = true;
             panel2.Visible = false;
             panel4.Visible = false;
+            panel5.Visible = false;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -133,21 +134,22 @@ namespace YameStore
 
         private void label6_Click_1(object sender, EventArgs e)
         {
-            Quenmatkhau dk = new Quenmatkhau();
-            dk.Show();
-            this.Hide();
+            panel5.Visible = true;
+            panel1.Visible = false;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             panel1.Visible = true;
             panel2.Visible = false;
+            panel5.Visible = false;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             panel2.Visible = true;
             panel1.Visible = false;
+            panel5.Visible = false;
         }
 
         private bool check_error()
@@ -312,6 +314,23 @@ namespace YameStore
                 loadmanv(radioButton4.Text);
                 chucvuhientai = radioButton4.Text;
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+            panel5.Visible = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panel4.Visible= true;
+            panel5.Visible = false;
+        }
+
+        private void btn_huy_Click_1(object sender, EventArgs e)
+        {
+
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
