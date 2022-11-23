@@ -52,6 +52,7 @@
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -279,11 +280,22 @@
             // 
             this.columnHeader4.Text = "Thành Tiền";
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(1073, 710);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(97, 39);
+            this.button4.TabIndex = 45;
+            this.button4.Text = "Tiếp tục";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Baohanh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox1);
@@ -347,5 +359,6 @@
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
+        private Button button4;
     }
 }

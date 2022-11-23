@@ -143,7 +143,6 @@
             this.panel_top.Name = "panel_top";
             this.panel_top.Size = new System.Drawing.Size(675, 40);
             this.panel_top.TabIndex = 2;
-            this.panel_top.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_top_Paint);
             // 
             // label7
             // 
@@ -155,7 +154,6 @@
             this.label7.Size = new System.Drawing.Size(110, 15);
             this.label7.TabIndex = 2;
             this.label7.Text = "Tài khoản hiện tại:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // txt_nameuser
             // 
@@ -175,7 +173,6 @@
             this.label_home.Size = new System.Drawing.Size(59, 19);
             this.label_home.TabIndex = 0;
             this.label_home.Text = "HOME";
-            this.label_home.Click += new System.EventHandler(this.label_home_Click);
             // 
             // panel_center
             // 

@@ -215,7 +215,6 @@
             this.textBox3.Size = new System.Drawing.Size(10, 16);
             this.textBox3.TabIndex = 24;
             this.textBox3.TabStop = false;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // Thanhvienvip
             // 

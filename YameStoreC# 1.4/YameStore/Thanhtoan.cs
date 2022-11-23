@@ -18,16 +18,32 @@ namespace YameStore
     public partial class Thanhtoan : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=YAME;Integrated Security=True");
-        public string stdName { get; set; }
+        public string manv = "", matv = "";
+        public Baohanh reform;
 
-        public Thanhtoan()
+        public Thanhtoan(string manv, string matv, Baohanh reform)
         {
             InitializeComponent();
+            this.manv = manv;
+            this.matv = matv;
+            this.reform = reform;
         }
 
         private void Thanhtoan_Load(object sender, EventArgs e)
         {
-            textBox2.Text = stdName;
+            textBox2.Text = this.manv;
+            textBox3.Text = this.matv;
+            if (this.matv != "0")
+            {
+                button3.Visible = false;
+                button4.Visible = true;
+                textBox6.ReadOnly = true;
+            }
+            else
+            {
+                button3.Visible = true;
+                button4.Visible = false;
+            }
             dateTimePicker1.Value = DateTime.Now;
             ResizeListViewColumns(listView1);
             loadmahd();
@@ -42,8 +58,7 @@ namespace YameStore
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Frm_Nhanvien frM = new Frm_Nhanvien();
-            frM.Show();  //hiển thị form main
+            new Frm_Nhanvien(this.manv).Show();
             this.Close();
         }
 
@@ -156,29 +171,32 @@ namespace YameStore
                     string mathanhtoan = textBox4.Text;
                     string tensp = dt.Rows[1][1].ToString();
                     string tensize = dt.Rows[1][2].ToString();
-                    string soluong = numericUpDown1.Value.ToString();
-                    string dongia = dt.Rows[1][3].ToString();
+                    int soluong = Int32.Parse(numericUpDown1.Value.ToString());
+                    int dongia = Int32.Parse(dt.Rows[1][3].ToString());
 
                     float phantram_khachhang = float.Parse(textBox15.Text);
                     float phantram_sanpham = float.Parse(dt.Rows[1][4].ToString());
-                    float float_phantramgiam = sosanh(phantram_khachhang, phantram_sanpham);
-                    string phantramgiam = float_phantramgiam.ToString();
+                    float phantramgiam = (phantram_khachhang > phantram_sanpham ? phantram_khachhang : phantram_sanpham);
 
-                    int int_dongia = Int32.Parse(dongia);
-                    int int_soluong = Int32.Parse(soluong);
-                    int giagoc = int_soluong * int_dongia;
-                    float float_thanhtien = giagoc * (1 - float_phantramgiam);
-                    int int_thanhtien = (int)float_thanhtien;
-                    string thanhtien = int_thanhtien.ToString();
+                    int giagoc = soluong * dongia;
 
+                    float float_thanhtien = giagoc * (1 - phantramgiam);
+                    int thanhtien = (int)float_thanhtien;
+
+                    if (giagoc < 100000)
+                    {
+                        phantramgiam = 0;
+                        thanhtien = giagoc;
+                    }
+                    
                     ListViewItem item = new ListViewItem();
                     item.Text = mathanhtoan;
                     item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = tensp });
                     item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = tensize });
-                    item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = soluong });
-                    item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = dongia });
-                    item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = phantramgiam });
-                    item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = thanhtien });
+                    item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = soluong.ToString() });
+                    item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = dongia.ToString() });
+                    item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = phantramgiam.ToString() });
+                    item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = thanhtien.ToString() });
                     listView1.Items.Add(item);
                     textBox4.Text = "";
                     numericUpDown1.Value = 1;
@@ -475,32 +493,25 @@ namespace YameStore
                 updateVITHANHVIEN();
                 MessageBox.Show("Thanh toán hoàn tất");
 
-                Frm_Nhanvien nv = new Frm_Nhanvien();
-                nv.stdUser_home = getUserid();
-
-                this.Hide();
-                nv.Show();
+                new Frm_Nhanvien(this.manv).Show();
+                this.Close();
             }
             else
             {
                 MessageBox.Show("Chưa có sản phẩm để thanh toán!");
             }
         }
-        public string getUserid()
+
+        private void button4_Click_1(object sender, EventArgs e)
         {
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT TAIKHOAN FROM NHANVIEN WHERE HOTEN=N'" + textBox2.Text + "'", con);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            return dt.Rows[0][0].ToString();
+            this.Close();
+            this.reform.Show();
         }
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            Frm_Nhanvien nv = new Frm_Nhanvien();
-            nv.stdUser_home = getUserid();
-
-            this.Hide();
-            nv.Show();
+            new Frm_Nhanvien(this.manv).Show();
+            this.Close();
         }
     }
 }

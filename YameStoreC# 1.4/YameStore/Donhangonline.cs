@@ -12,9 +12,11 @@ namespace YameStore
 {
     public partial class Donhangonline : Form
     {
-        public Donhangonline()
+        public string manv = "";
+        public Donhangonline(string manv)
         {
             InitializeComponent();
+            this.manv = manv;
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -27,27 +29,9 @@ namespace YameStore
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            new Chitietdonhangonline().Show();
-            this.Hide();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            new Chitietdonhangonline().Show();
-            this.Hide();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            new Chitietdonhangonline().Show();
-            this.Hide();
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
-            new Frm_Nhanvien().Show();
+            new Frm_Nhanvien(this.manv).Show();
             this.Hide();
         }
     }

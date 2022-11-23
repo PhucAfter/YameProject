@@ -14,58 +14,40 @@ namespace YameStore
     public partial class Frm_Quanli : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=YAME;Integrated Security=True");
+        public string manv = "";
 
-        public string stdUser_home { get; set; }
-        public Frm_Quanli()
+        public Frm_Quanli(string manv)
         {
             InitializeComponent();
+            this.manv = manv;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            QL_Nhanvien frm=new QL_Nhanvien();
-            frm.Show();
-            this.Hide();
+            new QL_Nhanvien(this.manv).Show();
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            QL_Kho frm = new QL_Kho();
-            frm.Show();
-            this.Hide();
+            new QL_Kho(this.manv).Show();
+            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Thongke frm=new Thongke();
-            frm.Show();
-            this.Hide();
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label_home_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel_top_Paint(object sender, PaintEventArgs e)
-        {
-
+            new Thongke(this.manv).Show();
+            this.Close();
         }
 
         private void Frm_Quanli_Load(object sender, EventArgs e)
         {
-            txt_nameuser.Text = stdUser_home;
+            txt_nameuser.Text = this.manv;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            login lg = new login();
-            lg.Show();
+            new login().Show();
             this.Close();
         }
     }

@@ -18,16 +18,11 @@ namespace YameStore
         SqlConnection con = new SqlConnection(@"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=YAME;Integrated Security=True");
         SqlDataAdapter adapter;
         DataTable dt;
-        public string stdUser_tracuu { get; set; }
-
-        public Tracuu()
+        public string manv = "";
+        public Tracuu(string manv)
         {
             InitializeComponent();
-        }
-
-        private void Tracuu_Load(object sender, EventArgs e)
-        {
-            textBox1.Text = stdUser_tracuu;
+            this.manv = manv;
         }
 
         public void showData()
@@ -63,11 +58,8 @@ namespace YameStore
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Frm_Nhanvien nv = new Frm_Nhanvien();
-            nv.stdUser_home = textBox1.Text;
-
-            this.Hide();
-            nv.Show();
+            new Frm_Nhanvien(this.manv).Show();
+            this.Close();
         }
     }
 }

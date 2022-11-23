@@ -18,9 +18,10 @@ namespace YameStore
     public partial class Baohanh : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=YAME;Integrated Security=True");
-
-        public Baohanh()
+        public string manv = "", matv = "";
+        public Baohanh(string manv)
         {
+            this.manv = manv;
             InitializeComponent();
         }
 
@@ -44,24 +45,30 @@ namespace YameStore
                 DateTime ngaybaohanh = ngaylap.AddDays(7);
                 DateTime ngayhomnay = dateTimePicker1.Value.Date;
                 int checkhethan = DateTime.Compare(ngayhomnay, ngaybaohanh);
-                /*if (checkhethan > 0)
+
+                if (checkhethan > 0)
                 {
                     MessageBox.Show("Hoá đơn hết hạn đổi trả");
                     return;
-                }*/
+                }
+
+                DataTable dtmanv = new DataTable();
+                SqlDataAdapter getmanv = new SqlDataAdapter("select MATV FROM HOADON WHERE MAHD = '" + textBox4.Text + "'", con);
+                getmanv.Fill(dtmanv);
+                this.matv = dtmanv.Rows[0][0].ToString();
 
                 DataTable show = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT CONCAT(CTHD.MASP,CTHD.MASIZE) AS 'Mã Thanh Toán', TENSP, TENSIZE, SOLUONG, CTHD.DONGIA, CTHD.PHANTRAMGIAM, THANHTIEN FROM CTHD, SANPHAM, SIZE WHERE CTHD.MASP = SANPHAM.MASP AND CTHD.MASIZE = SIZE.MASIZE AND MAHD='" + textBox4.Text + "'", con);
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT CONCAT(CTHD.MASP,CTHD.MASIZE) AS 'Mã Thanh Toán', TENSP AS 'Tên Sản Phẩm', TENSIZE AS 'Tên Size', SOLUONG AS 'Số Lượng Mua', CTHD.DONGIA AS 'Đơn Giá', CTHD.PHANTRAMGIAM AS 'Phần Trăm Giảm', THANHTIEN AS 'Thành Tiền' FROM CTHD, SANPHAM, SIZE WHERE CTHD.MASP = SANPHAM.MASP AND CTHD.MASIZE = SIZE.MASIZE AND MAHD='" + textBox4.Text + "'", con);
                 adapter.Fill(show);
                 dataGridView1.DataSource = show;
 
                 DataGridViewCheckBoxColumn checkColumn = new DataGridViewCheckBoxColumn();
-                checkColumn.HeaderText = "Đổi trả";
+                checkColumn.HeaderText = "Đổi Trả";
                 checkColumn.Name = "check";
                 checkColumn.Width = 50;
                 checkColumn.ReadOnly = false;
                 DataGridViewTextBoxColumn txtColumn = new DataGridViewTextBoxColumn();
-                txtColumn.HeaderText = "Số lượng đổi";
+                txtColumn.HeaderText = "Số Lượng Đổi";
                 txtColumn.Name = "txt";
 
 
@@ -79,17 +86,8 @@ namespace YameStore
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Frm_Nhanvien nv = new Frm_Nhanvien();
-
-            this.Hide();
-            nv.Show();
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
-            //221122000000000004
             reloadListView();
 
             string nullNum = string.Empty;
@@ -189,6 +187,23 @@ namespace YameStore
                 parsedValue = Int32.Parse(a);
                 return parsedValue;
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (listView1.Items.Count == 0)
+            {
+                MessageBox.Show("Chưa có sản phẩm cần đổi!");
+                return;
+            }
+            new Thanhtoan(this.manv, this.matv, this).Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            new Frm_Nhanvien(this.manv).Show();
+            this.Close();
         }
     }
 }

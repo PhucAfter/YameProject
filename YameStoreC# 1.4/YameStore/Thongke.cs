@@ -17,15 +17,16 @@ namespace YameStore
         SqlConnection con = new SqlConnection(@"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=YAME;Integrated Security=True");
         SqlDataAdapter adapterngay,adapterthang;
         DataTable dtngay,dtthang;
-        public Thongke()
+        public string manv = "";
+        public Thongke(string manv)
         {
             InitializeComponent();
+            this.manv = manv;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Frm_Quanli frm=new Frm_Quanli();
-            frm.Show();
+            new Frm_Quanli(this.manv).Show();
             this.Close();
         }
 

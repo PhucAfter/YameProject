@@ -78,25 +78,19 @@ namespace YameStore
                 if (dt.Rows[0][0].ToString() == "1")
                 {
                     DataTable dtchucvu = new DataTable();
-                    SqlDataAdapter getchucvu = new SqlDataAdapter("select CHUCVU FROM USERYAME, NHANVIEN WHERE USERYAME.TAIKHOAN = NHANVIEN.TAIKHOAN AND USERYAME.TAIKHOAN ='" + txt_user.Text + "'", con);
+                    SqlDataAdapter getchucvu = new SqlDataAdapter("select CHUCVU, MANV FROM USERYAME, NHANVIEN WHERE USERYAME.TAIKHOAN = NHANVIEN.TAIKHOAN AND USERYAME.TAIKHOAN ='" + txt_user.Text + "'", con);
                     getchucvu.Fill(dtchucvu);
+                    string manv = dtchucvu.Rows[0][1].ToString();
                     if (dtchucvu.Rows[0][0].ToString() == "Bán hàng")
                     {
-                        Frm_Nhanvien nv = new Frm_Nhanvien();
-                        nv.stdUser_home = txt_user.Text;
-
                         this.Hide();
-                        nv.Show();
+                        new Frm_Nhanvien(manv).Show();
                     }
                     else
                     {
-                        Frm_Quanli nv = new Frm_Quanli();
-                        nv.stdUser_home = txt_user.Text;
-
                         this.Hide();
-                        nv.Show();
+                        new Frm_Quanli(manv).Show();
                     }
-
                 }
                 else
                 {

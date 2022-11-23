@@ -12,14 +12,16 @@ namespace YameStore
 {
     public partial class Chitietdonhangonline : Form
     {
-        public Chitietdonhangonline()
+        public string manv = "";
+        public Chitietdonhangonline(string manv)
         {
             InitializeComponent();
+            this.manv = manv;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new Donhangonline().Show();
+            new Donhangonline(this.manv).Show();
             this.Hide();
         }
     }

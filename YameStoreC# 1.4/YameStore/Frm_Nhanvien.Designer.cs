@@ -161,7 +161,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel_top
             // 
@@ -195,7 +194,6 @@
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(142, 23);
             this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label_home
             // 
@@ -207,7 +205,6 @@
             this.label_home.Size = new System.Drawing.Size(59, 19);
             this.label_home.TabIndex = 0;
             this.label_home.Text = "HOME";
-            this.label_home.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel_center
             // 
@@ -226,7 +223,6 @@
             this.panel_center.Name = "panel_center";
             this.panel_center.Size = new System.Drawing.Size(675, 399);
             this.panel_center.TabIndex = 2;
-            this.panel_center.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_center_Paint);
             // 
             // pictureBox2
             // 
@@ -293,7 +289,6 @@
             this.label1.Size = new System.Drawing.Size(195, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "© 2022 - CÔNG TY TNHH YAME VN";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // imageList1
             // 

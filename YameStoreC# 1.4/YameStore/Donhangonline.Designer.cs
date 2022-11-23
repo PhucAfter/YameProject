@@ -36,14 +36,12 @@
             this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader8 = new System.Windows.Forms.ColumnHeader();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button3 = new System.Windows.Forms.Button();
             this.listView3 = new System.Windows.Forms.ListView();
             this.columnHeader9 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader10 = new System.Windows.Forms.ColumnHeader();
@@ -111,7 +109,6 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.listView1);
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
@@ -120,16 +117,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Chờ xử lý";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(616, 21);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(116, 43);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Chi tiết đơn hàng";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // listView1
             // 
@@ -163,7 +150,6 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.button3);
             this.tabPage3.Controls.Add(this.listView3);
             this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Name = "tabPage3";
@@ -172,16 +158,6 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Đã xử lý";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(615, 22);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(116, 43);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Chi tiết đơn hàng";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // listView3
             // 
@@ -263,8 +239,6 @@
         private ColumnHeader columnHeader10;
         private ColumnHeader columnHeader11;
         private ColumnHeader columnHeader12;
-        private Button button2;
-        private Button button3;
         private Button button4;
     }
 }

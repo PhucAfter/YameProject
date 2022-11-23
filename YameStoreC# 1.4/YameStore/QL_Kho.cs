@@ -19,9 +19,11 @@ namespace YameStore
         SqlDataAdapter adapterall;
         DataTable dt;
         DataTable dtall;
-        public QL_Kho()
+        public string manv = "";
+        public QL_Kho(string manv)
         {
             InitializeComponent();
+            this.manv = manv;
         }
         private void QL_Kho_Load(object sender, EventArgs e)
         {
@@ -30,8 +32,7 @@ namespace YameStore
 
         private void btn_thoat_Click(object sender, EventArgs e)
         {
-            Frm_Quanli frm = new Frm_Quanli();
-            frm.Show();
+            new Frm_Quanli(this.manv).Show();
             this.Close();
         }
         public void showData()

@@ -12,9 +12,11 @@ namespace YameStore
 {
     public partial class QL_Nhanvien : Form
     {
-        public QL_Nhanvien()
+        public string manv = "";
+        public QL_Nhanvien(string manv)
         {
             InitializeComponent();
+            this.manv = manv;
         }
 
         private void QL_Nhanvien_Load(object sender, EventArgs e)
@@ -24,8 +26,7 @@ namespace YameStore
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Frm_Quanli frm = new Frm_Quanli();
-            frm.Show();
+            new Frm_Quanli(this.manv).Show();
             this.Close();
         }
     }

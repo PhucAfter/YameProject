@@ -15,17 +15,17 @@ namespace YameStore
     public partial class Thanhvienvip : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=YAME;Integrated Security=True");
-        public string stdUser_thanhvienvip { get; set; }
+        public string manv = "";
 
-        public Thanhvienvip()
+        public Thanhvienvip(string manv)
         {
             InitializeComponent();
+            this.manv = manv;
         }
 
         private void Thanhvienvip_Load(object sender, EventArgs e)
         {
             loadmatv();
-            textBox3.Text = stdUser_thanhvienvip;
         }
 
         public void loadmatv()
@@ -84,10 +84,7 @@ namespace YameStore
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Frm_Nhanvien frm = new Frm_Nhanvien();
-            frm.stdUser_home = textBox3.Text;
-
-            frm.Show();
+            new Frm_Nhanvien(this.manv).Show();
             this.Close();
         }
 
@@ -116,14 +113,9 @@ namespace YameStore
 
                 MessageBox.Show("Đăng ký thành công");
                 con.Close();
-                new Frm_Nhanvien().Show();
+                new Frm_Nhanvien(this.manv).Show();
                 this.Close();
             }
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
