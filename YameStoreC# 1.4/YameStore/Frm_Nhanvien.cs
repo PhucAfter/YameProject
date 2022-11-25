@@ -37,7 +37,7 @@ namespace YameStore
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new Thanhtoan(this.manv, "0", new Baohanh(this.manv)).Show();
+            new Thanhtoan(this.manv, null).Show();
             this.Close();
         }
 

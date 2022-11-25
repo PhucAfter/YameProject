@@ -77,10 +77,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -241,18 +241,18 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(12, 218);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(57, 15);
+            this.label9.Size = new System.Drawing.Size(54, 15);
             this.label9.TabIndex = 1;
-            this.label9.Text = "Số lượng:";
+            this.label9.Text = "Số lượng";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(104, 218);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(91, 15);
+            this.label8.Size = new System.Drawing.Size(88, 15);
             this.label8.TabIndex = 0;
-            this.label8.Text = "Mã Thanh Toán:";
+            this.label8.Text = "Mã Thanh Toán";
             // 
             // pictureBox2
             // 
@@ -389,9 +389,9 @@
             // 
             // textBox14
             // 
-            this.textBox14.Location = new System.Drawing.Point(456, 40);
+            this.textBox14.Location = new System.Drawing.Point(442, 28);
             this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(138, 29);
+            this.textBox14.Size = new System.Drawing.Size(166, 29);
             this.textBox14.TabIndex = 36;
             this.textBox14.TextChanged += new System.EventHandler(this.textBox14_TextChanged);
             // 
@@ -399,7 +399,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label18.Location = new System.Drawing.Point(350, 43);
+            this.label18.Location = new System.Drawing.Point(336, 31);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(100, 20);
             this.label18.TabIndex = 35;
@@ -554,14 +554,28 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tổng tiền thanh toán";
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label14.Location = new System.Drawing.Point(18, 45);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(112, 20);
+            this.label14.TabIndex = 47;
+            this.label14.Text = "Loại thanh toán";
+            // 
             // comboBox1
             // 
             this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Tiền mặt",
+            "ATM"});
             this.comboBox1.Location = new System.Drawing.Point(150, 40);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(250, 33);
             this.comboBox1.TabIndex = 46;
+            this.comboBox1.Text = "Tiền mặt";
             // 
             // groupBox3
             // 
@@ -588,16 +602,6 @@
             this.label6.Size = new System.Drawing.Size(306, 40);
             this.label6.TabIndex = 47;
             this.label6.Text = "HOÁ ĐƠN BÁN HÀNG";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(18, 45);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(112, 20);
-            this.label14.TabIndex = 47;
-            this.label14.Text = "Loại thanh toán";
             // 
             // Thanhtoan
             // 

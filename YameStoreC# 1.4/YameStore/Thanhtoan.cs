@@ -18,35 +18,38 @@ namespace YameStore
     public partial class Thanhtoan : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=YAME;Integrated Security=True");
-        public string manv = "", matv = "";
+        public string manv = "";
         public Baohanh reform;
 
-        public Thanhtoan(string manv, string matv, Baohanh reform)
+        public Thanhtoan(string manv, Baohanh reform)
         {
             InitializeComponent();
             this.manv = manv;
-            this.matv = matv;
             this.reform = reform;
         }
 
         private void Thanhtoan_Load(object sender, EventArgs e)
         {
             textBox2.Text = this.manv;
-            textBox3.Text = this.matv;
-            if (this.matv != "0")
+            if (this.reform != null)
             {
                 button3.Visible = false;
                 button4.Visible = true;
                 textBox6.ReadOnly = true;
+                textBox3.Text = reform.matv;
+                textBox1.Text = reform.mahd;
+                textBox15.Text = "0";
+                button7.Enabled = false;
+                textBox12.Text = reform.tongGT;
             }
             else
             {
                 button3.Visible = true;
                 button4.Visible = false;
+                loadmahd();
             }
             dateTimePicker1.Value = DateTime.Now;
             ResizeListViewColumns(listView1);
-            loadmahd();
         }
         private void ResizeListViewColumns(ListView lv)
         {
@@ -176,18 +179,18 @@ namespace YameStore
 
                     float phantram_khachhang = float.Parse(textBox15.Text);
                     float phantram_sanpham = float.Parse(dt.Rows[1][4].ToString());
-                    float phantramgiam = (phantram_khachhang > phantram_sanpham ? phantram_khachhang : phantram_sanpham);
+                    float phantramgiam = sosanh(phantram_khachhang,phantram_sanpham);
 
                     int giagoc = soluong * dongia;
 
                     float float_thanhtien = giagoc * (1 - phantramgiam);
                     int thanhtien = (int)float_thanhtien;
 
-                    if (giagoc < 100000)
+                    /*if (giagoc < 100000)
                     {
                         phantramgiam = 0;
                         thanhtien = giagoc;
-                    }
+                    }*/
                     
                     ListViewItem item = new ListViewItem();
                     item.Text = mathanhtoan;
@@ -471,13 +474,11 @@ namespace YameStore
             }
         }
 
-        //REALOAD
+        //REAFESH
         private void button7_Click(object sender, EventArgs e)
         {
-            textBox3.ReadOnly = false;
-            textBox3.Text = "0";
-            textBox14.ReadOnly = false;
-            textBox14.Text = "";
+            new Thanhtoan(this.manv, null).Show();
+            this.Close();
         }
 
         //XAC NHAN

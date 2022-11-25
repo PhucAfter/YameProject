@@ -18,7 +18,7 @@ namespace YameStore
     public partial class Baohanh : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=YAME;Integrated Security=True");
-        public string manv = "", matv = "";
+        public string manv = "", matv = "", mahd = "", tongGT = "";
         public Baohanh(string manv)
         {
             this.manv = manv;
@@ -52,10 +52,10 @@ namespace YameStore
                     return;
                 }
 
-                DataTable dtmanv = new DataTable();
-                SqlDataAdapter getmanv = new SqlDataAdapter("select MATV FROM HOADON WHERE MAHD = '" + textBox4.Text + "'", con);
-                getmanv.Fill(dtmanv);
-                this.matv = dtmanv.Rows[0][0].ToString();
+                DataTable dtmatv = new DataTable();
+                SqlDataAdapter getmatv = new SqlDataAdapter("select MATV FROM HOADON WHERE MAHD = '" + textBox4.Text + "'", con);
+                getmatv.Fill(dtmatv);
+                this.matv = dtmatv.Rows[0][0].ToString();
 
                 DataTable show = new DataTable();
                 SqlDataAdapter adapter = new SqlDataAdapter("SELECT CONCAT(CTHD.MASP,CTHD.MASIZE) AS 'Mã Thanh Toán', TENSP AS 'Tên Sản Phẩm', TENSIZE AS 'Tên Size', SOLUONG AS 'Số Lượng Mua', CTHD.DONGIA AS 'Đơn Giá', CTHD.PHANTRAMGIAM AS 'Phần Trăm Giảm', THANHTIEN AS 'Thành Tiền' FROM CTHD, SANPHAM, SIZE WHERE CTHD.MASP = SANPHAM.MASP AND CTHD.MASIZE = SIZE.MASIZE AND MAHD='" + textBox4.Text + "'", con);
@@ -78,7 +78,7 @@ namespace YameStore
                 dataGridView1.Columns.Add(txtColumn);
                 dataGridView1.Columns["txt"].ReadOnly = false;
 
-                textBox4.Text = "";
+                this.mahd = textBox4.Text;
             }
             else
             {
@@ -196,7 +196,8 @@ namespace YameStore
                 MessageBox.Show("Chưa có sản phẩm cần đổi!");
                 return;
             }
-            new Thanhtoan(this.manv, this.matv, this).Show();
+            this.tongGT = textBox1.Text;
+            new Thanhtoan(this.manv, this).Show();
             this.Hide();
         }
 

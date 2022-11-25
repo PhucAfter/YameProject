@@ -66,7 +66,7 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox1.Location = new System.Drawing.Point(187, 119);
+            this.groupBox1.Location = new System.Drawing.Point(400, 121);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(418, 118);
             this.groupBox1.TabIndex = 31;
@@ -181,7 +181,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 100;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(1261, 214);
+            this.dataGridView1.Size = new System.Drawing.Size(1344, 214);
             this.dataGridView1.TabIndex = 52;
             // 
             // dateTimePicker1
@@ -189,7 +189,7 @@
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateTimePicker1.CustomFormat = "dd/MM/yyyy hh:mm:ss";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(650, 119);
+            this.dateTimePicker1.Location = new System.Drawing.Point(654, 92);
             this.dateTimePicker1.MinDate = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(164, 23);
@@ -198,7 +198,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1176, 710);
+            this.button3.Location = new System.Drawing.Point(1259, 710);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(97, 39);
             this.button3.TabIndex = 44;
@@ -218,7 +218,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(824, 695);
+            this.textBox1.Location = new System.Drawing.Point(740, 695);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(136, 23);
@@ -228,11 +228,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(740, 695);
+            this.label4.Location = new System.Drawing.Point(740, 671);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 21);
+            this.label4.Size = new System.Drawing.Size(133, 21);
             this.label4.TabIndex = 59;
-            this.label4.Text = "Tổng tiền:";
+            this.label4.Text = "Tổng GT đổi hàng";
             // 
             // listView1
             // 
@@ -282,7 +282,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(1073, 710);
+            this.button4.Location = new System.Drawing.Point(1156, 710);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(97, 39);
             this.button4.TabIndex = 45;
