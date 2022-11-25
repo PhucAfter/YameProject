@@ -7,9 +7,6 @@
     <Compile Update="Chitietdonhangonline.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Dangki.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Donhangonline.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -31,7 +28,7 @@
     <Compile Update="Thanhtoan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Baohanh.cs">
+    <Compile Update="Doitra.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Login.cs">

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>YameStore</id>
+    <version>1.0.0</version>
+    <authors>YameStore</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net6.0-windows7.0">
+        <dependency id="System.Data.SqlClient" version="4.8.4" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net6.0-windows7.0">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WindowsForms" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="C:\Users\Admin\Documents\GitHub\YameProject\YameStoreC# 1.4\YameStore\bin\Debug\net6.0-windows\YameStore.runtimeconfig.json" target="lib\net6.0-windows7.0\YameStore.runtimeconfig.json" />
+    <file src="C:\Users\Admin\Documents\GitHub\YameProject\YameStoreC# 1.4\YameStore\bin\Debug\net6.0-windows\YameStore.dll" target="lib\net6.0-windows7.0\YameStore.dll" />
+  </files>
+</package>

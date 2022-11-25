@@ -36,44 +36,42 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_mahd = new System.Windows.Forms.TextBox();
+            this.txt_manv = new System.Windows.Forms.TextBox();
+            this.txt_matv = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.numUD_soluong = new System.Windows.Forms.NumericUpDown();
+            this.btn_xoasp = new System.Windows.Forms.Button();
+            this.btn_themsp = new System.Windows.Forms.Button();
+            this.txt_mathanhtoan = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txt_voucher = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txt_hoten = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.txt_tonghoadon = new System.Windows.Forms.TextBox();
+            this.txt_giamtructiep = new System.Windows.Forms.TextBox();
+            this.txt_giamvoucher = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.txt_phaithu = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.txt_sdt = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.txt_giamkhachvip = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.btn_thanhtoan = new System.Windows.Forms.Button();
+            this.listView_chitiet = new System.Windows.Forms.ListView();
             this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader8 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
-            this.button7 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.btn_refesh = new System.Windows.Forms.Button();
+            this.txt_loadvoucher = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -81,11 +79,14 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.test = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUD_soluong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -148,32 +149,32 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Ngày lập:";
             // 
-            // textBox1
+            // txt_mahd
             // 
-            this.textBox1.Location = new System.Drawing.Point(130, 106);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(166, 23);
-            this.textBox1.TabIndex = 7;
-            this.textBox1.TabStop = false;
+            this.txt_mahd.Location = new System.Drawing.Point(130, 106);
+            this.txt_mahd.Name = "txt_mahd";
+            this.txt_mahd.ReadOnly = true;
+            this.txt_mahd.Size = new System.Drawing.Size(166, 23);
+            this.txt_mahd.TabIndex = 7;
+            this.txt_mahd.TabStop = false;
             // 
-            // textBox2
+            // txt_manv
             // 
-            this.textBox2.Location = new System.Drawing.Point(130, 132);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(166, 23);
-            this.textBox2.TabIndex = 8;
-            this.textBox2.TabStop = false;
+            this.txt_manv.Location = new System.Drawing.Point(130, 132);
+            this.txt_manv.Name = "txt_manv";
+            this.txt_manv.ReadOnly = true;
+            this.txt_manv.Size = new System.Drawing.Size(166, 23);
+            this.txt_manv.TabIndex = 8;
+            this.txt_manv.TabStop = false;
             // 
-            // textBox3
+            // txt_matv
             // 
-            this.textBox3.Location = new System.Drawing.Point(144, 28);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(166, 29);
-            this.textBox3.TabIndex = 9;
-            this.textBox3.Text = "0";
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.txt_matv.Location = new System.Drawing.Point(144, 28);
+            this.txt_matv.Name = "txt_matv";
+            this.txt_matv.Size = new System.Drawing.Size(166, 29);
+            this.txt_matv.TabIndex = 9;
+            this.txt_matv.Text = "0";
+            this.txt_matv.TextChanged += new System.EventHandler(this.txt_matv_TextChanged);
             // 
             // dateTimePicker1
             // 
@@ -187,54 +188,54 @@
             this.dateTimePicker1.TabIndex = 11;
             this.dateTimePicker1.Value = new System.DateTime(2022, 10, 21, 14, 13, 8, 0);
             // 
-            // numericUpDown1
+            // numUD_soluong
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numericUpDown1.Location = new System.Drawing.Point(12, 236);
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.numUD_soluong.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numUD_soluong.Location = new System.Drawing.Point(12, 236);
+            this.numUD_soluong.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(86, 46);
-            this.numericUpDown1.TabIndex = 19;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.numUD_soluong.Name = "numUD_soluong";
+            this.numUD_soluong.Size = new System.Drawing.Size(86, 46);
+            this.numUD_soluong.TabIndex = 19;
+            this.numUD_soluong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numUD_soluong.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
             // 
-            // button2
+            // btn_xoasp
             // 
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(768, 236);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(85, 46);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "Xóa";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_xoasp.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_xoasp.Location = new System.Drawing.Point(768, 236);
+            this.btn_xoasp.Name = "btn_xoasp";
+            this.btn_xoasp.Size = new System.Drawing.Size(85, 46);
+            this.btn_xoasp.TabIndex = 17;
+            this.btn_xoasp.Text = "Xóa";
+            this.btn_xoasp.UseVisualStyleBackColor = true;
+            this.btn_xoasp.Click += new System.EventHandler(this.btn_xoasp_Click);
             // 
-            // button1
+            // btn_themsp
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(677, 236);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 46);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_themsp.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_themsp.Location = new System.Drawing.Point(677, 236);
+            this.btn_themsp.Name = "btn_themsp";
+            this.btn_themsp.Size = new System.Drawing.Size(85, 46);
+            this.btn_themsp.TabIndex = 16;
+            this.btn_themsp.Text = "Thêm";
+            this.btn_themsp.UseVisualStyleBackColor = true;
+            this.btn_themsp.Click += new System.EventHandler(this.btn_themsp_Click);
             // 
-            // textBox4
+            // txt_mathanhtoan
             // 
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.Location = new System.Drawing.Point(104, 236);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(567, 46);
-            this.textBox4.TabIndex = 15;
+            this.txt_mathanhtoan.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_mathanhtoan.Location = new System.Drawing.Point(104, 236);
+            this.txt_mathanhtoan.Name = "txt_mathanhtoan";
+            this.txt_mathanhtoan.Size = new System.Drawing.Size(567, 46);
+            this.txt_mathanhtoan.TabIndex = 15;
             // 
             // label9
             // 
@@ -274,14 +275,14 @@
             this.label10.TabIndex = 19;
             this.label10.Text = "Nhập Voucher (nếu có):";
             // 
-            // textBox6
+            // txt_voucher
             // 
-            this.textBox6.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox6.Location = new System.Drawing.Point(18, 317);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(382, 46);
-            this.textBox6.TabIndex = 20;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.txt_voucher.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_voucher.Location = new System.Drawing.Point(18, 317);
+            this.txt_voucher.Name = "txt_voucher";
+            this.txt_voucher.Size = new System.Drawing.Size(382, 46);
+            this.txt_voucher.TabIndex = 20;
+            this.txt_voucher.TextChanged += new System.EventHandler(this.txt_voucher_TextChanged);
             // 
             // label11
             // 
@@ -293,15 +294,15 @@
             this.label11.TabIndex = 22;
             this.label11.Text = "Tên khách hàng:";
             // 
-            // textBox7
+            // txt_hoten
             // 
-            this.textBox7.Location = new System.Drawing.Point(144, 58);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(166, 29);
-            this.textBox7.TabIndex = 23;
-            this.textBox7.TabStop = false;
-            this.textBox7.Text = "Khách Hàng Yame";
+            this.txt_hoten.Location = new System.Drawing.Point(144, 58);
+            this.txt_hoten.Name = "txt_hoten";
+            this.txt_hoten.ReadOnly = true;
+            this.txt_hoten.Size = new System.Drawing.Size(166, 29);
+            this.txt_hoten.TabIndex = 23;
+            this.txt_hoten.TabStop = false;
+            this.txt_hoten.Text = "Khách Hàng Yame";
             // 
             // label12
             // 
@@ -323,38 +324,44 @@
             this.label13.TabIndex = 25;
             this.label13.Text = "Giảm giá";
             // 
-            // textBox8
+            // txt_tonghoadon
             // 
-            this.textBox8.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox8.Location = new System.Drawing.Point(150, 140);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(250, 54);
-            this.textBox8.TabIndex = 19;
-            this.textBox8.Text = "0";
-            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txt_tonghoadon.BackColor = System.Drawing.Color.Blue;
+            this.txt_tonghoadon.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_tonghoadon.ForeColor = System.Drawing.Color.Lime;
+            this.txt_tonghoadon.Location = new System.Drawing.Point(150, 140);
+            this.txt_tonghoadon.Name = "txt_tonghoadon";
+            this.txt_tonghoadon.ReadOnly = true;
+            this.txt_tonghoadon.Size = new System.Drawing.Size(250, 54);
+            this.txt_tonghoadon.TabIndex = 19;
+            this.txt_tonghoadon.Text = "0";
+            this.txt_tonghoadon.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox9
+            // txt_giamtructiep
             // 
-            this.textBox9.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox9.Location = new System.Drawing.Point(150, 210);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(250, 54);
-            this.textBox9.TabIndex = 28;
-            this.textBox9.Text = "0";
-            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txt_giamtructiep.BackColor = System.Drawing.Color.Blue;
+            this.txt_giamtructiep.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_giamtructiep.ForeColor = System.Drawing.Color.Lime;
+            this.txt_giamtructiep.Location = new System.Drawing.Point(150, 210);
+            this.txt_giamtructiep.Name = "txt_giamtructiep";
+            this.txt_giamtructiep.ReadOnly = true;
+            this.txt_giamtructiep.Size = new System.Drawing.Size(250, 54);
+            this.txt_giamtructiep.TabIndex = 28;
+            this.txt_giamtructiep.Text = "0";
+            this.txt_giamtructiep.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox12
+            // txt_giamvoucher
             // 
-            this.textBox12.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox12.Location = new System.Drawing.Point(150, 420);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.ReadOnly = true;
-            this.textBox12.Size = new System.Drawing.Size(250, 54);
-            this.textBox12.TabIndex = 32;
-            this.textBox12.Text = "0";
-            this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txt_giamvoucher.BackColor = System.Drawing.Color.Blue;
+            this.txt_giamvoucher.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_giamvoucher.ForeColor = System.Drawing.Color.Lime;
+            this.txt_giamvoucher.Location = new System.Drawing.Point(150, 420);
+            this.txt_giamvoucher.Name = "txt_giamvoucher";
+            this.txt_giamvoucher.ReadOnly = true;
+            this.txt_giamvoucher.Size = new System.Drawing.Size(250, 54);
+            this.txt_giamvoucher.TabIndex = 32;
+            this.txt_giamvoucher.Text = "0";
+            this.txt_giamvoucher.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label16
             // 
@@ -366,16 +373,18 @@
             this.label16.TabIndex = 31;
             this.label16.Text = "Giảm Voucher";
             // 
-            // textBox13
+            // txt_phaithu
             // 
-            this.textBox13.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox13.Location = new System.Drawing.Point(150, 490);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.ReadOnly = true;
-            this.textBox13.Size = new System.Drawing.Size(250, 54);
-            this.textBox13.TabIndex = 34;
-            this.textBox13.Text = "0";
-            this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txt_phaithu.BackColor = System.Drawing.Color.Blue;
+            this.txt_phaithu.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_phaithu.ForeColor = System.Drawing.Color.Lime;
+            this.txt_phaithu.Location = new System.Drawing.Point(150, 490);
+            this.txt_phaithu.Name = "txt_phaithu";
+            this.txt_phaithu.ReadOnly = true;
+            this.txt_phaithu.Size = new System.Drawing.Size(250, 54);
+            this.txt_phaithu.TabIndex = 34;
+            this.txt_phaithu.Text = "0";
+            this.txt_phaithu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label17
             // 
@@ -387,13 +396,13 @@
             this.label17.TabIndex = 33;
             this.label17.Text = "Phải thu";
             // 
-            // textBox14
+            // txt_sdt
             // 
-            this.textBox14.Location = new System.Drawing.Point(442, 28);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(166, 29);
-            this.textBox14.TabIndex = 36;
-            this.textBox14.TextChanged += new System.EventHandler(this.textBox14_TextChanged);
+            this.txt_sdt.Location = new System.Drawing.Point(442, 28);
+            this.txt_sdt.Name = "txt_sdt";
+            this.txt_sdt.Size = new System.Drawing.Size(166, 29);
+            this.txt_sdt.TabIndex = 36;
+            this.txt_sdt.TextChanged += new System.EventHandler(this.txt_sdt_TextChanged);
             // 
             // label18
             // 
@@ -405,17 +414,17 @@
             this.label18.TabIndex = 35;
             this.label18.Text = "Số điện thoại:";
             // 
-            // textBox15
+            // txt_giamkhachvip
             // 
-            this.textBox15.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox15.Location = new System.Drawing.Point(150, 85);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.ReadOnly = true;
-            this.textBox15.Size = new System.Drawing.Size(250, 33);
-            this.textBox15.TabIndex = 38;
-            this.textBox15.TabStop = false;
-            this.textBox15.Text = "0";
-            this.textBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txt_giamkhachvip.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_giamkhachvip.Location = new System.Drawing.Point(150, 85);
+            this.txt_giamkhachvip.Name = "txt_giamkhachvip";
+            this.txt_giamkhachvip.ReadOnly = true;
+            this.txt_giamkhachvip.Size = new System.Drawing.Size(250, 33);
+            this.txt_giamkhachvip.TabIndex = 38;
+            this.txt_giamkhachvip.TabStop = false;
+            this.txt_giamkhachvip.Text = "0";
+            this.txt_giamkhachvip.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label19
             // 
@@ -427,39 +436,37 @@
             this.label19.TabIndex = 37;
             this.label19.Text = "Giảm khách VIP";
             // 
-            // button6
+            // btn_thanhtoan
             // 
-            this.button6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button6.Location = new System.Drawing.Point(950, 650);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(406, 39);
-            this.button6.TabIndex = 19;
-            this.button6.Text = "Khách hàng thanh toán";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btn_thanhtoan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_thanhtoan.Location = new System.Drawing.Point(950, 650);
+            this.btn_thanhtoan.Name = "btn_thanhtoan";
+            this.btn_thanhtoan.Size = new System.Drawing.Size(406, 39);
+            this.btn_thanhtoan.TabIndex = 19;
+            this.btn_thanhtoan.Text = "Khách hàng thanh toán";
+            this.btn_thanhtoan.UseVisualStyleBackColor = true;
+            this.btn_thanhtoan.Click += new System.EventHandler(this.btn_thanhtoan_Click);
             // 
-            // listView1
+            // listView_chitiet
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listView_chitiet.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader6,
             this.columnHeader2,
             this.columnHeader8,
             this.columnHeader1,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader7});
-            this.listView1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.listView1.FullRowSelect = true;
-            this.listView1.GridLines = true;
-            this.listView1.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.listView1.LabelWrap = false;
-            this.listView1.Location = new System.Drawing.Point(12, 288);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(932, 446);
-            this.listView1.TabIndex = 39;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.VirtualListSize = 4;
+            this.columnHeader3});
+            this.listView_chitiet.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.listView_chitiet.FullRowSelect = true;
+            this.listView_chitiet.GridLines = true;
+            this.listView_chitiet.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.listView_chitiet.LabelWrap = false;
+            this.listView_chitiet.Location = new System.Drawing.Point(12, 288);
+            this.listView_chitiet.Name = "listView_chitiet";
+            this.listView_chitiet.Size = new System.Drawing.Size(932, 446);
+            this.listView_chitiet.TabIndex = 39;
+            this.listView_chitiet.UseCompatibleStateImageBehavior = false;
+            this.listView_chitiet.View = System.Windows.Forms.View.Details;
+            this.listView_chitiet.VirtualListSize = 4;
             // 
             // columnHeader6
             // 
@@ -481,33 +488,25 @@
             // 
             this.columnHeader3.Text = "Đơn giá";
             // 
-            // columnHeader4
+            // btn_refesh
             // 
-            this.columnHeader4.Text = "Giảm %";
+            this.btn_refesh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_refesh.Location = new System.Drawing.Point(859, 236);
+            this.btn_refesh.Name = "btn_refesh";
+            this.btn_refesh.Size = new System.Drawing.Size(85, 46);
+            this.btn_refesh.TabIndex = 41;
+            this.btn_refesh.Text = "Refesh";
+            this.btn_refesh.UseVisualStyleBackColor = true;
+            this.btn_refesh.Click += new System.EventHandler(this.btn_refesh_Click);
             // 
-            // columnHeader7
+            // txt_loadvoucher
             // 
-            this.columnHeader7.Text = "Thành Tiền";
-            // 
-            // button7
-            // 
-            this.button7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button7.Location = new System.Drawing.Point(859, 236);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(85, 46);
-            this.button7.TabIndex = 41;
-            this.button7.Text = "Refesh";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(18, 369);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(382, 29);
-            this.textBox5.TabIndex = 42;
-            this.textBox5.TabStop = false;
+            this.txt_loadvoucher.Location = new System.Drawing.Point(18, 369);
+            this.txt_loadvoucher.Name = "txt_loadvoucher";
+            this.txt_loadvoucher.ReadOnly = true;
+            this.txt_loadvoucher.Size = new System.Drawing.Size(382, 29);
+            this.txt_loadvoucher.TabIndex = 42;
+            this.txt_loadvoucher.TabStop = false;
             // 
             // button3
             // 
@@ -517,7 +516,7 @@
             this.button3.TabIndex = 43;
             this.button3.Text = "Thoát";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -527,25 +526,25 @@
             this.button4.TabIndex = 44;
             this.button4.Text = "Quay về";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.label17);
-            this.groupBox2.Controls.Add(this.textBox13);
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.txt_phaithu);
+            this.groupBox2.Controls.Add(this.txt_loadvoucher);
             this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Controls.Add(this.textBox12);
+            this.groupBox2.Controls.Add(this.txt_giamvoucher);
             this.groupBox2.Controls.Add(this.label19);
-            this.groupBox2.Controls.Add(this.textBox9);
+            this.groupBox2.Controls.Add(this.txt_giamtructiep);
             this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.textBox15);
+            this.groupBox2.Controls.Add(this.txt_giamkhachvip);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.textBox8);
+            this.groupBox2.Controls.Add(this.txt_tonghoadon);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.txt_voucher);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.Location = new System.Drawing.Point(950, 74);
             this.groupBox2.Name = "groupBox2";
@@ -579,11 +578,11 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox14);
+            this.groupBox3.Controls.Add(this.txt_sdt);
             this.groupBox3.Controls.Add(this.label18);
-            this.groupBox3.Controls.Add(this.textBox3);
+            this.groupBox3.Controls.Add(this.txt_matv);
             this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.textBox7);
+            this.groupBox3.Controls.Add(this.txt_hoten);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox3.Location = new System.Drawing.Point(326, 74);
@@ -603,29 +602,50 @@
             this.label6.TabIndex = 47;
             this.label6.Text = "HOÁ ĐƠN BÁN HÀNG";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(677, 564);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 48;
+            // 
+            // test
+            // 
+            this.test.Location = new System.Drawing.Point(950, 705);
+            this.test.Name = "test";
+            this.test.Size = new System.Drawing.Size(97, 39);
+            this.test.TabIndex = 49;
+            this.test.Text = "test";
+            this.test.UseVisualStyleBackColor = true;
+            this.test.Click += new System.EventHandler(this.test_Click);
+            // 
             // Thanhtoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.Controls.Add(this.test);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.numUD_soluong);
+            this.Controls.Add(this.btn_xoasp);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_themsp);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txt_mathanhtoan);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.btn_refesh);
+            this.Controls.Add(this.listView_chitiet);
+            this.Controls.Add(this.btn_thanhtoan);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_manv);
+            this.Controls.Add(this.txt_mahd);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
@@ -637,12 +657,13 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Thanhtoan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUD_soluong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -658,44 +679,42 @@
         private Label label4;
         private Label label5;
         private Label label7;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox txt_mahd;
+        private TextBox txt_manv;
+        private TextBox txt_matv;
         private DateTimePicker dateTimePicker1;
-        private Button button2;
-        private Button button1;
-        private TextBox textBox4;
+        private Button btn_xoasp;
+        private Button btn_themsp;
+        private TextBox txt_mathanhtoan;
         private Label label9;
         private Label label8;
         private PictureBox pictureBox2;
         private Label label10;
-        private TextBox textBox6;
+        private TextBox txt_voucher;
         private Label label11;
-        private TextBox textBox7;
+        private TextBox txt_hoten;
         private Label label12;
         private Label label13;
-        private TextBox textBox8;
-        private TextBox textBox9;
-        private TextBox textBox12;
+        private TextBox txt_tonghoadon;
+        private TextBox txt_giamtructiep;
+        private TextBox txt_giamvoucher;
         private Label label16;
-        private TextBox textBox13;
+        private TextBox txt_phaithu;
         private Label label17;
-        private TextBox textBox14;
+        private TextBox txt_sdt;
         private Label label18;
-        private TextBox textBox15;
+        private TextBox txt_giamkhachvip;
         private Label label19;
-        private Button button6;
-        private NumericUpDown numericUpDown1;
-        private ListView listView1;
+        private Button btn_thanhtoan;
+        private NumericUpDown numUD_soluong;
+        private ListView listView_chitiet;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;
-        private ColumnHeader columnHeader4;
         private ColumnHeader columnHeader6;
-        private ColumnHeader columnHeader7;
-        private Button button7;
+        private Button btn_refesh;
         private ColumnHeader columnHeader8;
-        private TextBox textBox5;
+        private TextBox txt_loadvoucher;
         private Button button3;
         private Button button4;
         private GroupBox groupBox2;
@@ -703,5 +722,7 @@
         private GroupBox groupBox3;
         private Label label6;
         private Label label14;
+        private DataGridView dataGridView1;
+        private Button test;
     }
 }

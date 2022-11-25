@@ -18,7 +18,7 @@ namespace YameStore
 {
     public partial class login : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=YAME;Integrated Security=True");
+        SqlConnection con = new YameDatabase().getConnection();
         String randomCode,chucvuhientai;
         public static String to;
         public login()
@@ -36,13 +36,6 @@ namespace YameStore
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             this.Focus();
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-            Dangki dk = new Dangki();
-            dk.Show();
-            this.Hide();
         }
 
         private void btn_huy_Click(object sender, EventArgs e)

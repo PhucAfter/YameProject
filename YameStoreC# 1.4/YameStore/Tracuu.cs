@@ -15,7 +15,7 @@ namespace YameStore
 
     public partial class Tracuu : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=YAME;Integrated Security=True");
+        SqlConnection con = new YameDatabase().getConnection();
         SqlDataAdapter adapter;
         DataTable dt;
         public string manv = "";

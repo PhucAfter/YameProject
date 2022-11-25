@@ -1,6 +1,6 @@
 ﻿namespace YameStore
 {
-    partial class Baohanh
+    partial class Doitra
     {
         /// <summary>
         /// Required designer variable.

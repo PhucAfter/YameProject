@@ -14,7 +14,7 @@ namespace YameStore
 {
     public partial class Thongke : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=YAME;Integrated Security=True");
+        SqlConnection con = new YameDatabase().getConnection();
         SqlDataAdapter adapterngay,adapterthang;
         DataTable dtngay,dtthang;
         public string manv = "";

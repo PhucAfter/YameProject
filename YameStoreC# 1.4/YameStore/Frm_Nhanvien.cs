@@ -14,7 +14,7 @@ namespace YameStore
 {
     public partial class Frm_Nhanvien : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=YAME;Integrated Security=True");
+        SqlConnection con = new YameDatabase().getConnection();
         public string manv = "";
         public Frm_Nhanvien(string manv)
         {
@@ -49,7 +49,7 @@ namespace YameStore
 
         private void button3_Click(object sender, EventArgs e)
         {
-            new Baohanh(this.manv).Show();
+            new Doitra(this.manv).Show();
             this.Close();
         }
 

@@ -15,11 +15,11 @@ using ListView = System.Windows.Forms.ListView;
 
 namespace YameStore
 {
-    public partial class Baohanh : Form
+    public partial class Doitra : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=YAME;Integrated Security=True");
+        SqlConnection con = new YameDatabase().getConnection();
         public string manv = "", matv = "", mahd = "", tongGT = "";
-        public Baohanh(string manv)
+        public Doitra(string manv)
         {
             this.manv = manv;
             InitializeComponent();

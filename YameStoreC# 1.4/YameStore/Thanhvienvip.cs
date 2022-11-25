@@ -14,7 +14,7 @@ namespace YameStore
 {
     public partial class Thanhvienvip : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=YAME;Integrated Security=True");
+        SqlConnection con = new YameDatabase().getConnection();
         public string manv = "";
 
         public Thanhvienvip(string manv)

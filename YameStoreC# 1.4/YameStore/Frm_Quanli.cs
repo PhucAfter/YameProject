@@ -13,7 +13,7 @@ namespace YameStore
 {
     public partial class Frm_Quanli : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=YAME;Integrated Security=True");
+        SqlConnection con = new YameDatabase().getConnection();
         public string manv = "";
 
         public Frm_Quanli(string manv)
