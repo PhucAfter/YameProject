@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "o5cVve95Pn51z9UQgyhoJFxXhUSwIfEmf+ZbXt0jqSR/ASz6hoWl8aSfTqomYpLK0S5M9r0iroK4iqzm3XkR6A==",
+  "dgSpecHash": "q/lY+9og0o7Lwl6TiHpdw5qFqzZTb5f89kV7ZgzP43L4G7QcTmWfVEGl7lbgD5RAG1TRUAWHofT+dJNvjV0GVQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\YameProject\\YameStoreC# 1.4\\YameStore\\YameStore.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\Documents\\GitHub\\YameProject\\YameStoreC# 1.4\\YameStore\\YameStore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

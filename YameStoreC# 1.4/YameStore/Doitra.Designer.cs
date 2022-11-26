@@ -30,7 +30,7 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txt_mahd = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -61,7 +61,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.txt_mahd);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -83,12 +83,12 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox4
+            // txt_mahd
             // 
-            this.textBox4.Location = new System.Drawing.Point(185, 31);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(166, 29);
-            this.textBox4.TabIndex = 15;
+            this.txt_mahd.Location = new System.Drawing.Point(185, 31);
+            this.txt_mahd.Name = "txt_mahd";
+            this.txt_mahd.Size = new System.Drawing.Size(166, 29);
+            this.txt_mahd.TabIndex = 15;
             // 
             // label9
             // 
@@ -150,7 +150,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(1176, 493);
+            this.button2.Location = new System.Drawing.Point(1259, 493);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(97, 29);
             this.button2.TabIndex = 17;
@@ -290,7 +290,7 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // Baohanh
+            // Doitra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -311,7 +311,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Baohanh";
+            this.Name = "Doitra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bảo hành";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -330,7 +330,7 @@
         private Button button5;
         private GroupBox groupBox1;
         private Button button1;
-        private TextBox textBox4;
+        private TextBox txt_mahd;
         private Label label9;
         private Label label8;
         private Label label6;

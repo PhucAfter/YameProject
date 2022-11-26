@@ -33,16 +33,15 @@ namespace YameStore
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            SqlDataAdapter checkexists = new SqlDataAdapter("SELECT COUNT(*) FROM HOADON WHERE MAHD='" + textBox4.Text + "'", con);
-            checkexists.Fill(dt);
+            DataTable DataTable1= new DataTable();
+            SqlDataAdapter SqlDataAdapter1 = new SqlDataAdapter("SELECT COUNT(*) FROM HOADON WHERE MAHD='" + txt_mahd.Text + "'", con);
+            SqlDataAdapter1.Fill(DataTable1);
             
-            if (dt.Rows[0][0].ToString() == "1")
+            if (DataTable1.Rows[0][0].ToString() == "1")
             {
-                SqlDataAdapter getngaylap = new SqlDataAdapter("SELECT YEAR(NGAYLAP),MONTH(NGAYLAP),DAY(NGAYLAP) FROM HOADON WHERE MAHD='" + textBox4.Text + "'", con);
-                getngaylap.Fill(dt);
-                DateTime ngaylap = new DateTime(Int32.Parse(dt.Rows[1][0].ToString()), Int32.Parse(dt.Rows[1][1].ToString()), Int32.Parse(dt.Rows[1][2].ToString()));
-                DateTime ngaybaohanh = ngaylap.AddDays(7);
+                SqlDataAdapter SqlDataAdapter1_2 = new SqlDataAdapter("SELECT YEAR(NGAYDOITRA),MONTH(NGAYDOITRA),DAY(NGAYDOITRA) FROM HOADON WHERE MAHD='" + txt_mahd.Text + "'", con);
+                SqlDataAdapter1_2.Fill(DataTable1);
+                DateTime ngaybaohanh = new DateTime(Int32.Parse(DataTable1.Rows[1][0].ToString()), Int32.Parse(DataTable1.Rows[1][1].ToString()), Int32.Parse(DataTable1.Rows[1][2].ToString()));
                 DateTime ngayhomnay = dateTimePicker1.Value.Date;
                 int checkhethan = DateTime.Compare(ngayhomnay, ngaybaohanh);
 
@@ -52,15 +51,15 @@ namespace YameStore
                     return;
                 }
 
-                DataTable dtmatv = new DataTable();
-                SqlDataAdapter getmatv = new SqlDataAdapter("select MATV FROM HOADON WHERE MAHD = '" + textBox4.Text + "'", con);
-                getmatv.Fill(dtmatv);
-                this.matv = dtmatv.Rows[0][0].ToString();
+                DataTable DataTable2 = new DataTable();
+                SqlDataAdapter SqlDataAdapter2 = new SqlDataAdapter("select MATV FROM HOADON WHERE MAHD = '" + txt_mahd.Text + "'", con);
+                SqlDataAdapter2.Fill(DataTable2);
+                this.matv = DataTable2.Rows[0][0].ToString();
 
-                DataTable show = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT CONCAT(CTHD.MASP,CTHD.MASIZE) AS 'Mã Thanh Toán', TENSP AS 'Tên Sản Phẩm', TENSIZE AS 'Tên Size', SOLUONG AS 'Số Lượng Mua', CTHD.DONGIA AS 'Đơn Giá', CTHD.PHANTRAMGIAM AS 'Phần Trăm Giảm', THANHTIEN AS 'Thành Tiền' FROM CTHD, SANPHAM, SIZE WHERE CTHD.MASP = SANPHAM.MASP AND CTHD.MASIZE = SIZE.MASIZE AND MAHD='" + textBox4.Text + "'", con);
-                adapter.Fill(show);
-                dataGridView1.DataSource = show;
+                DataTable DataTable3 = new DataTable();
+                SqlDataAdapter SqlDataAdapter3 = new SqlDataAdapter("SELECT CONCAT(CTHD.MASP,CTHD.MASIZE) AS 'Mã Thanh Toán', TENSP AS 'Tên Sản Phẩm', TENSIZE AS 'Tên Size', SOLUONG AS 'Số Lượng Mua', CTHD.DONGIA AS 'Đơn Giá', CTHD.PHANTRAMGIAM AS 'Phần Trăm Giảm', THANHTIEN AS 'Thành Tiền' FROM CTHD, SANPHAM, SIZE WHERE CTHD.MASP = SANPHAM.MASP AND CTHD.MASIZE = SIZE.MASIZE AND MAHD='" + txt_mahd.Text + "'", con);
+                SqlDataAdapter3.Fill(DataTable3);
+                dataGridView1.DataSource = DataTable3;
 
                 DataGridViewCheckBoxColumn checkColumn = new DataGridViewCheckBoxColumn();
                 checkColumn.HeaderText = "Đổi Trả";
@@ -78,7 +77,7 @@ namespace YameStore
                 dataGridView1.Columns.Add(txtColumn);
                 dataGridView1.Columns["txt"].ReadOnly = false;
 
-                this.mahd = textBox4.Text;
+                this.mahd = txt_mahd.Text;
             }
             else
             {

@@ -75,12 +75,14 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txt_valid = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.test = new System.Windows.Forms.Button();
+            this.txt_tongsp = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_soluong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -93,7 +95,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(119, 33);
+            this.label1.Location = new System.Drawing.Point(57, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(145, 15);
             this.label1.TabIndex = 0;
@@ -103,7 +105,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(115, 48);
+            this.label2.Location = new System.Drawing.Point(53, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(149, 24);
             this.label2.TabIndex = 1;
@@ -113,7 +115,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(12, 109);
+            this.label3.Location = new System.Drawing.Point(12, 74);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 20);
             this.label3.TabIndex = 2;
@@ -133,7 +135,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(12, 135);
+            this.label5.Location = new System.Drawing.Point(12, 100);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 20);
             this.label5.TabIndex = 4;
@@ -143,7 +145,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(12, 162);
+            this.label7.Location = new System.Drawing.Point(12, 127);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 20);
             this.label7.TabIndex = 6;
@@ -151,7 +153,7 @@
             // 
             // txt_mahd
             // 
-            this.txt_mahd.Location = new System.Drawing.Point(130, 106);
+            this.txt_mahd.Location = new System.Drawing.Point(130, 71);
             this.txt_mahd.Name = "txt_mahd";
             this.txt_mahd.ReadOnly = true;
             this.txt_mahd.Size = new System.Drawing.Size(166, 23);
@@ -160,7 +162,7 @@
             // 
             // txt_manv
             // 
-            this.txt_manv.Location = new System.Drawing.Point(130, 132);
+            this.txt_manv.Location = new System.Drawing.Point(130, 97);
             this.txt_manv.Name = "txt_manv";
             this.txt_manv.ReadOnly = true;
             this.txt_manv.Size = new System.Drawing.Size(166, 23);
@@ -181,7 +183,7 @@
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateTimePicker1.CustomFormat = "dd/MM/yyyy hh:mm:ss";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(132, 159);
+            this.dateTimePicker1.Location = new System.Drawing.Point(132, 124);
             this.dateTimePicker1.MinDate = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(164, 23);
@@ -191,7 +193,7 @@
             // numUD_soluong
             // 
             this.numUD_soluong.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numUD_soluong.Location = new System.Drawing.Point(12, 236);
+            this.numUD_soluong.Location = new System.Drawing.Point(12, 191);
             this.numUD_soluong.Minimum = new decimal(new int[] {
             1,
             0,
@@ -209,30 +211,34 @@
             // 
             // btn_xoasp
             // 
-            this.btn_xoasp.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_xoasp.Location = new System.Drawing.Point(768, 236);
+            this.btn_xoasp.BackColor = System.Drawing.Color.OrangeRed;
+            this.btn_xoasp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_xoasp.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_xoasp.Location = new System.Drawing.Point(768, 191);
             this.btn_xoasp.Name = "btn_xoasp";
             this.btn_xoasp.Size = new System.Drawing.Size(85, 46);
             this.btn_xoasp.TabIndex = 17;
             this.btn_xoasp.Text = "Xóa";
-            this.btn_xoasp.UseVisualStyleBackColor = true;
+            this.btn_xoasp.UseVisualStyleBackColor = false;
             this.btn_xoasp.Click += new System.EventHandler(this.btn_xoasp_Click);
             // 
             // btn_themsp
             // 
-            this.btn_themsp.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_themsp.Location = new System.Drawing.Point(677, 236);
+            this.btn_themsp.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_themsp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_themsp.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_themsp.Location = new System.Drawing.Point(677, 191);
             this.btn_themsp.Name = "btn_themsp";
             this.btn_themsp.Size = new System.Drawing.Size(85, 46);
             this.btn_themsp.TabIndex = 16;
             this.btn_themsp.Text = "Thêm";
-            this.btn_themsp.UseVisualStyleBackColor = true;
+            this.btn_themsp.UseVisualStyleBackColor = false;
             this.btn_themsp.Click += new System.EventHandler(this.btn_themsp_Click);
             // 
             // txt_mathanhtoan
             // 
             this.txt_mathanhtoan.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_mathanhtoan.Location = new System.Drawing.Point(104, 236);
+            this.txt_mathanhtoan.Location = new System.Drawing.Point(104, 191);
             this.txt_mathanhtoan.Name = "txt_mathanhtoan";
             this.txt_mathanhtoan.Size = new System.Drawing.Size(567, 46);
             this.txt_mathanhtoan.TabIndex = 15;
@@ -240,7 +246,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 218);
+            this.label9.Location = new System.Drawing.Point(12, 173);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(54, 15);
             this.label9.TabIndex = 1;
@@ -249,7 +255,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(104, 218);
+            this.label8.Location = new System.Drawing.Point(104, 173);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(88, 15);
             this.label8.TabIndex = 0;
@@ -258,9 +264,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::YameStore.Properties.Resources.yame;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(12, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(86, 82);
+            this.pictureBox2.Size = new System.Drawing.Size(35, 30);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 15;
             this.pictureBox2.TabStop = false;
@@ -327,7 +333,7 @@
             // txt_tonghoadon
             // 
             this.txt_tonghoadon.BackColor = System.Drawing.Color.Blue;
-            this.txt_tonghoadon.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_tonghoadon.Font = new System.Drawing.Font("Segoe UI Semibold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txt_tonghoadon.ForeColor = System.Drawing.Color.Lime;
             this.txt_tonghoadon.Location = new System.Drawing.Point(150, 140);
             this.txt_tonghoadon.Name = "txt_tonghoadon";
@@ -340,7 +346,7 @@
             // txt_giamtructiep
             // 
             this.txt_giamtructiep.BackColor = System.Drawing.Color.Blue;
-            this.txt_giamtructiep.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_giamtructiep.Font = new System.Drawing.Font("Segoe UI Semibold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txt_giamtructiep.ForeColor = System.Drawing.Color.Lime;
             this.txt_giamtructiep.Location = new System.Drawing.Point(150, 210);
             this.txt_giamtructiep.Name = "txt_giamtructiep";
@@ -353,7 +359,7 @@
             // txt_giamvoucher
             // 
             this.txt_giamvoucher.BackColor = System.Drawing.Color.Blue;
-            this.txt_giamvoucher.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_giamvoucher.Font = new System.Drawing.Font("Segoe UI Semibold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txt_giamvoucher.ForeColor = System.Drawing.Color.Lime;
             this.txt_giamvoucher.Location = new System.Drawing.Point(150, 420);
             this.txt_giamvoucher.Name = "txt_giamvoucher";
@@ -376,7 +382,7 @@
             // txt_phaithu
             // 
             this.txt_phaithu.BackColor = System.Drawing.Color.Blue;
-            this.txt_phaithu.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_phaithu.Font = new System.Drawing.Font("Segoe UI Semibold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txt_phaithu.ForeColor = System.Drawing.Color.Lime;
             this.txt_phaithu.Location = new System.Drawing.Point(150, 490);
             this.txt_phaithu.Name = "txt_phaithu";
@@ -425,6 +431,7 @@
             this.txt_giamkhachvip.TabStop = false;
             this.txt_giamkhachvip.Text = "0";
             this.txt_giamkhachvip.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txt_giamkhachvip.TextChanged += new System.EventHandler(this.txt_giamkhachvip_TextChanged);
             // 
             // label19
             // 
@@ -439,7 +446,7 @@
             // btn_thanhtoan
             // 
             this.btn_thanhtoan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_thanhtoan.Location = new System.Drawing.Point(950, 650);
+            this.btn_thanhtoan.Location = new System.Drawing.Point(950, 615);
             this.btn_thanhtoan.Name = "btn_thanhtoan";
             this.btn_thanhtoan.Size = new System.Drawing.Size(406, 39);
             this.btn_thanhtoan.TabIndex = 19;
@@ -460,9 +467,9 @@
             this.listView_chitiet.GridLines = true;
             this.listView_chitiet.ImeMode = System.Windows.Forms.ImeMode.On;
             this.listView_chitiet.LabelWrap = false;
-            this.listView_chitiet.Location = new System.Drawing.Point(12, 288);
+            this.listView_chitiet.Location = new System.Drawing.Point(12, 243);
             this.listView_chitiet.Name = "listView_chitiet";
-            this.listView_chitiet.Size = new System.Drawing.Size(932, 446);
+            this.listView_chitiet.Size = new System.Drawing.Size(932, 456);
             this.listView_chitiet.TabIndex = 39;
             this.listView_chitiet.UseCompatibleStateImageBehavior = false;
             this.listView_chitiet.View = System.Windows.Forms.View.Details;
@@ -490,13 +497,15 @@
             // 
             // btn_refesh
             // 
-            this.btn_refesh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_refesh.Location = new System.Drawing.Point(859, 236);
+            this.btn_refesh.BackColor = System.Drawing.Color.Yellow;
+            this.btn_refesh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_refesh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_refesh.Location = new System.Drawing.Point(859, 191);
             this.btn_refesh.Name = "btn_refesh";
             this.btn_refesh.Size = new System.Drawing.Size(85, 46);
             this.btn_refesh.TabIndex = 41;
             this.btn_refesh.Text = "Refesh";
-            this.btn_refesh.UseVisualStyleBackColor = true;
+            this.btn_refesh.UseVisualStyleBackColor = false;
             this.btn_refesh.Click += new System.EventHandler(this.btn_refesh_Click);
             // 
             // txt_loadvoucher
@@ -504,13 +513,13 @@
             this.txt_loadvoucher.Location = new System.Drawing.Point(18, 369);
             this.txt_loadvoucher.Name = "txt_loadvoucher";
             this.txt_loadvoucher.ReadOnly = true;
-            this.txt_loadvoucher.Size = new System.Drawing.Size(382, 29);
+            this.txt_loadvoucher.Size = new System.Drawing.Size(347, 29);
             this.txt_loadvoucher.TabIndex = 42;
             this.txt_loadvoucher.TabStop = false;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1259, 695);
+            this.button3.Location = new System.Drawing.Point(1259, 660);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(97, 39);
             this.button3.TabIndex = 43;
@@ -520,7 +529,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(1156, 695);
+            this.button4.Location = new System.Drawing.Point(1156, 660);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(97, 39);
             this.button4.TabIndex = 44;
@@ -530,6 +539,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txt_valid);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.label17);
@@ -546,12 +556,23 @@
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.txt_voucher);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.Location = new System.Drawing.Point(950, 74);
+            this.groupBox2.Location = new System.Drawing.Point(950, 39);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(406, 570);
             this.groupBox2.TabIndex = 45;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tổng tiền thanh toán";
+            // 
+            // txt_valid
+            // 
+            this.txt_valid.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txt_valid.Location = new System.Drawing.Point(371, 369);
+            this.txt_valid.Name = "txt_valid";
+            this.txt_valid.ReadOnly = true;
+            this.txt_valid.Size = new System.Drawing.Size(29, 29);
+            this.txt_valid.TabIndex = 50;
+            this.txt_valid.Text = "X";
+            this.txt_valid.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label14
             // 
@@ -585,7 +606,7 @@
             this.groupBox3.Controls.Add(this.txt_hoten);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox3.Location = new System.Drawing.Point(326, 74);
+            this.groupBox3.Location = new System.Drawing.Point(326, 39);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(618, 100);
             this.groupBox3.TabIndex = 46;
@@ -596,7 +617,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(638, 185);
+            this.label6.Location = new System.Drawing.Point(638, 145);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(306, 40);
             this.label6.TabIndex = 47;
@@ -605,7 +626,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(677, 564);
+            this.dataGridView1.Location = new System.Drawing.Point(704, 549);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(240, 150);
@@ -613,7 +634,7 @@
             // 
             // test
             // 
-            this.test.Location = new System.Drawing.Point(950, 705);
+            this.test.Location = new System.Drawing.Point(950, 660);
             this.test.Name = "test";
             this.test.Size = new System.Drawing.Size(97, 39);
             this.test.TabIndex = 49;
@@ -621,11 +642,24 @@
             this.test.UseVisualStyleBackColor = true;
             this.test.Click += new System.EventHandler(this.test_Click);
             // 
+            // txt_tongsp
+            // 
+            this.txt_tongsp.BackColor = System.Drawing.Color.White;
+            this.txt_tongsp.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_tongsp.Location = new System.Drawing.Point(621, 721);
+            this.txt_tongsp.Name = "txt_tongsp";
+            this.txt_tongsp.ReadOnly = true;
+            this.txt_tongsp.Size = new System.Drawing.Size(50, 35);
+            this.txt_tongsp.TabIndex = 50;
+            this.txt_tongsp.Text = "0";
+            this.txt_tongsp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Thanhtoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.Controls.Add(this.txt_tongsp);
             this.Controls.Add(this.test);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label6);
@@ -724,5 +758,7 @@
         private Label label14;
         private DataGridView dataGridView1;
         private Button test;
+        private TextBox txt_valid;
+        private TextBox txt_tongsp;
     }
 }

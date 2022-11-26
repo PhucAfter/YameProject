@@ -31,6 +31,8 @@ namespace YameStore
         private void Thanhtoan_Load(object sender, EventArgs e)
         {
             txt_manv.Text = this.manv;
+            dateTimePicker1.Value = DateTime.Now;
+            ResizeListViewColumns(listView_chitiet);
             if (this.reform != null)
             {
                 button3.Visible = false;
@@ -48,8 +50,6 @@ namespace YameStore
                 button4.Visible = false;
                 loadmahd();
             }
-            dateTimePicker1.Value = DateTime.Now;
-            ResizeListViewColumns(listView_chitiet);
         }
 
         private void ResizeListViewColumns(ListView lv)
@@ -65,12 +65,12 @@ namespace YameStore
         private void loadmahd()
         {
             DataTable dataTable = new DataTable();
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT TOP 1 MAHD FROM HOADON ORDER BY MAHD DESC", con);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT TOP 1 SUBSTRING(MAHD, 7, 12) AS ExtractString FROM HOADON ORDER BY MAHD DESC", con);
             sqlDataAdapter.Fill(dataTable);
 
             string date = dateTimePicker1.Value.ToString("ddMMyy");
-            string mahd_hientai = dataTable.Rows[0][0].ToString();
-            string mahd = date + mahd_hientai.Substring(6);
+            string stt = dataTable.Rows[0][0].ToString();
+            string mahd = date + stt;
             long mahd_tieptheo = long.Parse(mahd);
             mahd_tieptheo += 1;
             txt_mahd.Text = mahd_tieptheo.ToString();            
@@ -150,91 +150,23 @@ namespace YameStore
             }
         }
 
-        public float sosanh(float a, float b)
+
+        //CHỨC NĂNG LOAD TỔNG HOÁ ĐƠN HIỆN TẠI
+        private void loadTongHD()
         {
-            return a > b ? a : b;
-        }
-
-
-        //NÚT THÊM SẢN PHẨM VÀO LIST THANH TOÁN
-        private void btn_themsp_Click(object sender, EventArgs e)
-        {
-            if (txt_mathanhtoan.Text.Length == 10)
-            {
-                DataTable dataTable = new DataTable();
-                SqlDataAdapter SqlDataAdapter1 = new SqlDataAdapter("SELECT COUNT(*) FROM SANPHAM_SIZE WHERE MASP = '" + txt_mathanhtoan.Text.Substring(0, 7) + "' AND MASIZE = '" + txt_mathanhtoan.Text.Substring(7) + "'", con);
-                SqlDataAdapter1.Fill(dataTable);
-
-                if (dataTable.Rows[0][0].ToString() == "1")
-                {
-                    SqlDataAdapter SqlDataAdapter2 = new SqlDataAdapter("SELECT TENSP, TENSIZE, DONGIA FROM SANPHAM_SIZE, SANPHAM, SIZE WHERE SANPHAM_SIZE.MASP = SANPHAM.MASP AND SANPHAM_SIZE.MASIZE = SIZE.MASIZE AND SANPHAM_SIZE.MASP = '" + txt_mathanhtoan.Text.Substring(0, 7) + "' AND SANPHAM_SIZE.MASIZE = '" + txt_mathanhtoan.Text.Substring(7) + "'", con);
-                    SqlDataAdapter2.Fill(dataTable);
-
-                    string mathanhtoan = txt_mathanhtoan.Text;
-                    string tensp = dataTable.Rows[1][1].ToString();
-                    string tensize = dataTable.Rows[1][2].ToString();
-                    int soluong = Int32.Parse(numUD_soluong.Value.ToString());
-                    int dongia = Int32.Parse(dataTable.Rows[1][3].ToString());
-                    
-                    int giagoc = soluong * dongia;
-
-
-
-                    /*if (giagoc < 100000)
-                    {
-                        phantramgiam = 0;
-                        thanhtien = giagoc;
-                        float phantramgiam = float.Parse(txt_giamkhachvip.Text);
-                        if (dataTable.Rows[1][4].ToString() != "0")
-                        {
-                            phantramgiam = float.Parse(dataTable.Rows[1][4].ToString());
-                        }
-                        float float_thanhtien = giagoc * (1 - phantramgiam);
-                        int thanhtien = (int)float_thanhtien;
-                    }*/
-
-                    ListViewItem item = new ListViewItem();
-                    item.Text = mathanhtoan;
-                    item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = tensp });
-                    item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = tensize });
-                    item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = soluong.ToString() });
-                    item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = dongia.ToString() });
-                    //item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = phantramgiam.ToString() });
-                    //item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = thanhtien.ToString() });
-                    listView_chitiet.Items.Add(item);
-                    txt_mathanhtoan.Text = "";
-                    numUD_soluong.Value = 1;
-                    loadTongTien();
-                    loadGiaGiam();
-                    loadVoucher();
-                    loadThuTien();
-                }
-                else
-                {
-                    MessageBox.Show("Mã thanh toán không tồn tại!");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Mã thanh toán không hợp lệ!");
-            }
-        }
-
-
-        public void loadTongTien()
-        {
-            int tonggiagoc = 0;
+            int tonghoadon = 0;
             for (int i = 0; i < listView_chitiet.Items.Count; i++)
             {
                 int soluong = Int32.Parse(listView_chitiet.Items[i].SubItems[3].Text);
                 int dongia = Int32.Parse(listView_chitiet.Items[i].SubItems[4].Text);
-                tonggiagoc += soluong * dongia;
+                tonghoadon += soluong * dongia;
             }
-            txt_tonghoadon.Text = tonggiagoc.ToString();
+            txt_tonghoadon.Text = tonghoadon.ToString();
         }
 
 
-        public void loadGiaGiam()
+        //CHỨC NĂNG LOAD TỔNG SỐ TIỀN ĐƯỢC GIẢM HIỆN TẠI
+        private void loadGiaGiam()
         {
             int tonggiamSP = 0;
             int tonggiamVIP = 0;
@@ -272,57 +204,161 @@ namespace YameStore
         }
 
 
-        public void loadThuTien()
+        //CHỨC NĂNG LOAD SỐ TIỀN GIẢM TỪ VOUCHER
+        private void loadVoucher()
         {
-            Double tonghoadon = Double.Parse(txt_tonghoadon.Text);
-            Double giamtructiep = Double.Parse(txt_giamtructiep.Text);
-            Double giamvoucher = Double.Parse(txt_giamvoucher.Text);
-            Double tienphaithu = tonghoadon - giamtructiep - giamvoucher;
-            Double num = tienphaithu / 1000;
-            num = Math.Round(num, 2);
-            string afterdot = num.ToString().Substring(num.ToString().IndexOf(".") + 1, 1);
-            if (afterdot == "5")
+            DataTable DataTable = new DataTable();
+            SqlDataAdapter SqlDataAdapter1 = new SqlDataAdapter("SELECT COUNT(*) FROM VOUCHER WHERE MAHD='" + txt_voucher.Text + "'", con);
+            SqlDataAdapter1.Fill(DataTable);
+            if (DataTable.Rows[0][0].ToString() == "1")
             {
-                num += 0.5;
-            }
-            else
-            {
-                num = Math.Round(num);
-            }
-            num *= 1000;
-            txt_phaithu.Text = num.ToString();
-        }
-
-
-        public void loadVoucher()
-        {
-            DataTable dt = new DataTable();
-            SqlDataAdapter checkexists = new SqlDataAdapter("SELECT COUNT(*) FROM VOUCHER WHERE MAHD='" + txt_voucher.Text + "'", con);
-            checkexists.Fill(dt);
-            if (dt.Rows[0][0].ToString() == "1")
-            {
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT DONTOITHIEU,TIENGIAMLANSAU FROM VOUCHER WHERE MAHD='" + txt_voucher.Text + "'", con);
-                adapter.Fill(dt);
-                string dontoithieu = dt.Rows[1][1].ToString();
-                int int_dontoithieu = Int32.Parse(dontoithieu);
-                string tiengiamlansau = dt.Rows[1][2].ToString();
-                int tongtiengiampt = Int32.Parse(txt_tonghoadon.Text) - Int32.Parse(txt_giamtructiep.Text);
-                if (tongtiengiampt >= int_dontoithieu)
+                SqlDataAdapter SqlDataAdapter2 = new SqlDataAdapter("SELECT DONTOITHIEU,TIENGIAMLANSAU FROM VOUCHER WHERE MAHD='" + txt_voucher.Text + "'", con);
+                SqlDataAdapter2.Fill(DataTable);
+                int tonghoadon = Int32.Parse(txt_tonghoadon.Text);
+                int tonggiamtructiep = Int32.Parse(txt_giamtructiep.Text);
+                int dontoithieu = Int32.Parse(DataTable.Rows[1][1].ToString());
+                if ((tonghoadon - tonggiamtructiep) > dontoithieu)
                 {
-                    txt_loadvoucher.Text = "Đủ điều kiện sử dụng";
-                    txt_voucher.ReadOnly = true;
-                    txt_giamvoucher.Text = tiengiamlansau;
+                    txt_giamvoucher.Text = DataTable.Rows[1][2].ToString();
+                    txt_valid.Text = "✓";
+                    txt_loadvoucher.Text = "HOÁ ĐƠN ĐỦ ĐIỀU KIỆN ÁP DỤNG VOUCHER";
                 }
                 else
                 {
-                    txt_loadvoucher.Text = "Hoá đơn tối thiểu: " + dontoithieu + "!";
                     txt_giamvoucher.Text = "0";
+                    txt_valid.Text = "X";
+                    txt_loadvoucher.Text = "CẦN THÊM " + (dontoithieu - (tonghoadon - tonggiamtructiep)).ToString() + " ĐỂ ÁP DỤNG VOUCHER";
                 }
             }
         }
 
 
-        //XOA
+        //CHỨC NĂNG LOAD SỐ TIỀN PHẢI THU HIỆN TẠI
+        private void loadThuTien()
+        {
+            int tonghoadon = int.Parse(txt_tonghoadon.Text);
+            int giamtructiep = int.Parse(txt_giamtructiep.Text);
+            int giamvoucher = int.Parse(txt_giamvoucher.Text);
+            int tienphaithu = tonghoadon - giamtructiep - giamvoucher;
+            
+            decimal num = (decimal)tienphaithu / 1000;
+            num = Math.Round(num, MidpointRounding.AwayFromZero);
+            num *= 1000;
+            txt_phaithu.Text = num.ToString();
+            
+        }
+
+
+        //CHỨC NĂNG LOAD TỔNG SỐ LƯỢNG SẢN PHẨM HIỆN TẠI
+        private void loadTongSP()
+        {
+            int tongsoluong = 0;
+            for (int i = 0; i < listView_chitiet.Items.Count; i++)
+            {
+                int soluong = Int32.Parse(listView_chitiet.Items[i].SubItems[3].Text);
+                tongsoluong += soluong;
+            }
+            txt_tongsp.Text = tongsoluong.ToString();
+        }
+
+        //CẬP NHẬT BẢNG THANH TOÁN KHI CÓ THÊM GIẢM VOUCHER
+        private void txt_voucher_TextChanged(object sender, EventArgs e)
+        {
+            DataTable DataTable = new DataTable();
+            SqlDataAdapter SqlDataAdapter1 = new SqlDataAdapter("SELECT COUNT(*) FROM VOUCHER WHERE MAHD='" + txt_voucher.Text + "'", con);
+            SqlDataAdapter1.Fill(DataTable);
+            if (DataTable.Rows[0][0].ToString() == "1")
+            {
+                SqlDataAdapter SqlDataAdapter2 = new SqlDataAdapter("SELECT SUDUNG,YEAR(NGAYVOUCHER),MONTH(NGAYVOUCHER),DAY(NGAYVOUCHER),DONTOITHIEU FROM VOUCHER WHERE MAHD='" + txt_voucher.Text + "'", con);
+                SqlDataAdapter2.Fill(DataTable);
+
+                DateTime ngayhethan = new DateTime(Int32.Parse(DataTable.Rows[1][0].ToString()), Int32.Parse(DataTable.Rows[1][2].ToString()), Int32.Parse(DataTable.Rows[1][3].ToString()));
+                DateTime ngayhomnay = dateTimePicker1.Value.Date;
+                int checkhethan = DateTime.Compare(ngayhomnay, ngayhethan);
+
+                if (DataTable.Rows[1][1].ToString() == "True")
+                {
+                    txt_loadvoucher.Text = "VOUCHER ĐÃ ĐƯỢC SỬ DỤNG";
+                }
+                else if (checkhethan > 0)
+                {
+                    txt_loadvoucher.Text = "VOUCHER HẾT THỜI HẠN SỬ DỤNG";
+                }
+                else
+                {
+                    txt_voucher.ReadOnly = true;
+                    loadVoucher();
+                    loadThuTien();
+                }
+            }
+            else
+            {
+                txt_loadvoucher.Text = "VOUCHER KHÔNG TỒN TẠI";
+            }
+        }
+
+
+        //CẬP NHẬT BẢNG THANH TOÁN KHI CÓ THÊM GIẢM THÀNH VIÊN VIP
+        private void txt_giamkhachvip_TextChanged(object sender, EventArgs e)
+        {
+            loadTongHD();
+            loadGiaGiam();
+            loadVoucher();
+            loadThuTien();
+        }
+
+
+        //NÚT THÊM SẢN PHẨM VÀO LIST THANH TOÁN
+        private void btn_themsp_Click(object sender, EventArgs e)
+        {
+            if (txt_mathanhtoan.Text.Length == 10)
+            {
+                DataTable dataTable = new DataTable();
+                SqlDataAdapter SqlDataAdapter1 = new SqlDataAdapter("SELECT COUNT(*) FROM SANPHAM_SIZE WHERE MASP = '" + txt_mathanhtoan.Text.Substring(0, 7) + "' AND MASIZE = '" + txt_mathanhtoan.Text.Substring(7) + "'", con);
+                SqlDataAdapter1.Fill(dataTable);
+
+                if (dataTable.Rows[0][0].ToString() == "1")
+                {
+                    SqlDataAdapter SqlDataAdapter2 = new SqlDataAdapter("SELECT TENSP, TENSIZE, DONGIA FROM SANPHAM_SIZE, SANPHAM, SIZE WHERE SANPHAM_SIZE.MASP = SANPHAM.MASP AND SANPHAM_SIZE.MASIZE = SIZE.MASIZE AND SANPHAM_SIZE.MASP = '" + txt_mathanhtoan.Text.Substring(0, 7) + "' AND SANPHAM_SIZE.MASIZE = '" + txt_mathanhtoan.Text.Substring(7) + "'", con);
+                    SqlDataAdapter2.Fill(dataTable);
+
+                    string mathanhtoan = txt_mathanhtoan.Text;
+                    string tensp = dataTable.Rows[1][1].ToString();
+                    string tensize = dataTable.Rows[1][2].ToString();
+                    int soluong = Int32.Parse(numUD_soluong.Value.ToString());
+                    int dongia = Int32.Parse(dataTable.Rows[1][3].ToString());
+
+                    int giagoc = soluong * dongia;
+
+                    ListViewItem item = new ListViewItem();
+                    item.Text = mathanhtoan;
+                    item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = tensp });
+                    item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = tensize });
+                    item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = soluong.ToString() });
+                    item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = dongia.ToString() });
+                    listView_chitiet.Items.Add(item);
+
+                    txt_mathanhtoan.Text = "";
+                    numUD_soluong.Value = 1;
+                    loadTongSP();
+                    loadTongHD();
+                    loadGiaGiam();
+                    loadVoucher();
+                    loadThuTien();
+                }
+                else
+                {
+                    MessageBox.Show("Mã thanh toán không tồn tại!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Mã thanh toán không hợp lệ!");
+            }
+        }
+
+
+        //NÚT XOÁ SẢN PHẨM KHỎI LIST THANH TOÁN
         private void btn_xoasp_Click(object sender, EventArgs e)
         {
             if (listView_chitiet.SelectedItems.Count == 0)
@@ -337,7 +373,8 @@ namespace YameStore
                 {
                     listView_chitiet.Items.Remove(listView_chitiet.SelectedItems[0]);
                 }
-                loadTongTien();
+                loadTongSP();
+                loadTongHD();
                 loadGiaGiam();
                 loadVoucher();
                 loadThuTien();
@@ -346,56 +383,7 @@ namespace YameStore
         }
 
 
-        //VOUCHER
-        private void txt_voucher_TextChanged(object sender, EventArgs e)
-        {
-            DataTable dt = new DataTable();
-            SqlDataAdapter checkexists = new SqlDataAdapter("SELECT COUNT(*) FROM VOUCHER WHERE MAHD='" + txt_voucher.Text + "'", con);
-            checkexists.Fill(dt);
-            if (dt.Rows[0][0].ToString() == "1")
-            {
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT SUDUNG,YEAR(NGAYHETHAN),MONTH(NGAYHETHAN),DAY(NGAYHETHAN),DONTOITHIEU,TIENGIAMLANSAU FROM VOUCHER WHERE MAHD='" + txt_voucher.Text + "'", con);
-                adapter.Fill(dt);
-
-                string dontoithieu = dt.Rows[1][4].ToString();
-                int int_dontoithieu = Int32.Parse(dontoithieu);
-                int tongtiengiampt = Int32.Parse(txt_tonghoadon.Text) - Int32.Parse(txt_giamtructiep.Text);
-
-                DateTime ngayhethan = new DateTime(Int32.Parse(dt.Rows[1][0].ToString()), Int32.Parse(dt.Rows[1][2].ToString()), Int32.Parse(dt.Rows[1][3].ToString()));
-                DateTime ngayhomnay = dateTimePicker1.Value.Date;
-                int checkhethan = DateTime.Compare(ngayhomnay, ngayhethan);
-
-                if (dt.Rows[1][1].ToString() == "True")
-                {
-                    txt_loadvoucher.Text = "Voucher đã được sử dụng!";
-                    txt_giamvoucher.Text = "0";
-                }
-                else if (checkhethan > 0)
-                {
-                    txt_loadvoucher.Text = "Voucher hết hạn sử dụng!";
-                    txt_giamvoucher.Text = "0";
-                }
-                else if (tongtiengiampt > int_dontoithieu)
-                {
-                    txt_loadvoucher.Text = "Đủ điều kiện sử dụng";
-                    txt_voucher.ReadOnly = true;
-                    txt_giamvoucher.Text = dt.Rows[1][5].ToString();
-                    loadThuTien();
-                }
-                else
-                {
-                    txt_loadvoucher.Text = "Hoá đơn tối thiểu: " + dt.Rows[1][4].ToString() + "!";
-                    txt_voucher.ReadOnly = true;
-                    txt_giamvoucher.Text = "0";
-                }
-            }
-            else
-            {
-                txt_loadvoucher.Text = "không tồn tại mã hoá đơn cũ (voucher) này";
-                txt_giamvoucher.Text = "0";
-            }
-        }
-
+        //THỰC HIỆN CÂU LỆNH SQL ĐỂ INSERT DỮ LIỆU MỚI VÀO BẢNG HOADON
         public void insertHOADON()
         {
             con.Open();
@@ -405,26 +393,41 @@ namespace YameStore
             con.Close();
         }
 
+
+        //THỰC HIỆN CÂU LỆNH SQL ĐỂ INSERT DỮ LIỆU MỚI VÀO BẢNG CTHD
         public void insertCTHD()
         {
-            /*con.Open();
-            string getmahd = txt_mahd.Text;
+            con.Open();
+            string mahd = txt_mahd.Text;
             for (int i = 0; i < listView_chitiet.Items.Count; i++)
             {
                 string mathanhtoan = listView_chitiet.Items[i].SubItems[0].Text;
-                string getmasp = mathanhtoan.Substring(0, 7);
-                string getmasize = mathanhtoan.Substring(7);
-                string getsoluong = listView_chitiet.Items[i].SubItems[3].Text;
-                string getdongia = listView_chitiet.Items[i].SubItems[4].Text;
-                string getphantramgiam = listView_chitiet.Items[i].SubItems[5].Text;
-                string getthanhtien = listView_chitiet.Items[i].SubItems[6].Text;
-                string insertCTHD = @"INSERT INTO dbo.CTHD (MAHD,MASP,MASIZE,SOLUONG,DONGIA,PHANTRAMGIAM,THANHTIEN) VALUES ('" + getmahd + "','" + getmasp + "','" + getmasize + "'," + getsoluong + "," + getdongia + "," + getphantramgiam + "," + getthanhtien + ")";
+                string masp = mathanhtoan.Substring(0, 7);
+                string masize = mathanhtoan.Substring(7);
+                int soluong = Int32.Parse(listView_chitiet.Items[i].SubItems[3].Text);
+                int dongia = Int32.Parse(listView_chitiet.Items[i].SubItems[4].Text);
+
+                DataTable DataTable = new DataTable();
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT PHANTRAMGIAM FROM SANPHAM WHERE MASP = '" + masp + "'", con);
+                sqlDataAdapter.Fill(DataTable);
+
+                float phantramgiam = float.Parse(txt_giamkhachvip.Text);
+                if (DataTable.Rows[0][0].ToString() != "0")
+                {
+                    phantramgiam = float.Parse(DataTable.Rows[0][0].ToString());
+                }
+
+                float thanhtien = (soluong * dongia) * (1- phantramgiam);
+
+                string insertCTHD = @"INSERT INTO dbo.CTHD (MAHD,MASP,MASIZE,SOLUONG,DONGIA,PHANTRAMGIAM,THANHTIEN) VALUES ('" + mahd + "','" + masp + "','" + masize + "'," + soluong.ToString() + "," + dongia.ToString() + "," + phantramgiam.ToString() + "," + thanhtien.ToString() + ")";
                 SqlCommand cmd = new SqlCommand(insertCTHD, con);
                 cmd.ExecuteNonQuery();
             }
-            con.Close();*/
+            con.Close();
         }
 
+
+        //THỰC HIỆN CÂU LỆNH SQL ĐỂ INSERT DỮ LIỆU MỚI VÀO BẢNG BANGTHANHTOAN
         public void insertBANGTHANHTOAN()
         {
             con.Open();
@@ -434,42 +437,29 @@ namespace YameStore
             con.Close();
         }
 
+
+        //THỰC HIỆN CÂU LỆNH SQL ĐỂ INSERT DỮ LIỆU MỚI VÀO BẢNG VOUCHER
         public void insertVOUCHER()
         {
             con.Open();
 
-            DateTime thangsau = dateTimePicker1.Value.Date.AddMonths(1);
-            string getngayhethan = thangsau.ToString("MM/dd/yyyy");
+            decimal dontoithieu = decimal.Parse(txt_phaithu.Text) / 2000;
+            dontoithieu = Math.Round(dontoithieu, MidpointRounding.AwayFromZero);
+            dontoithieu *= 1000;
 
-            Double tiengiamlansau = Double.Parse(txt_phaithu.Text);
-            tiengiamlansau = tiengiamlansau * 5 / 100;
-            Double num = tiengiamlansau / 1000;
-            num = Math.Round(num, 2);
-            string afterdot = num.ToString().Substring(num.ToString().IndexOf(".") + 1, 1);
-            if (afterdot == "5")
-            {
-                num += 0.5;
-            }
-            else
-            {
-                num = Math.Round(num);
-            }
-            num *= 1000;
+            decimal tiengiamlansau = dontoithieu / 10;
 
-            string gettiengiamlansau = num.ToString();
-
-            Double dontoithieu = num * 10;
-            string getdontoithieu = dontoithieu.ToString();
-
-            string insertVOUCHER = @"INSERT INTO dbo.VOUCHER (MAHD,NGAYHETHAN,DONTOITHIEU,TIENGIAMLANSAU) VALUES ('" + txt_mahd.Text + "','" + getngayhethan + "'," + getdontoithieu + "," + gettiengiamlansau + ")";
+            string insertVOUCHER = @"INSERT INTO dbo.VOUCHER (MAHD,DONTOITHIEU,TIENGIAMLANSAU) VALUES ('" + txt_mahd.Text + "'," + dontoithieu.ToString() + "," + tiengiamlansau.ToString() + ")";
             SqlCommand cmd = new SqlCommand(insertVOUCHER, con);
             cmd.ExecuteNonQuery();
             con.Close();
         }
 
+
+        //THỰC HIỆN CÂU LỆNH SQL ĐỂ UPDATE LẦN SỬ DỤNG BẢNG VOUCHER NẾU CÓ ÁP DỤNG VOUCHER
         public void updateVOUCHER()
         {
-            if (txt_loadvoucher.Text == "Đủ điều kiện sử dụng")
+            if (txt_valid.Text == "✓")
             {
                 con.Open();
                 string updateVOUCHER = @"UPDATE dbo.VOUCHER SET SUDUNG = 1 WHERE MAHD ='" + txt_voucher.Text + "'";
@@ -479,6 +469,8 @@ namespace YameStore
             }
         }
 
+
+        //THỰC HIỆN CÂU LỆNH SQL ĐỂ UPDATE TIỀN TÍCH LUỸ BẢNG THANHVIEN
         public void updateVITHANHVIEN()
         {
             if (txt_matv.Text != "0")
@@ -491,17 +483,18 @@ namespace YameStore
             }
         }
 
-        //REAFESH
+        //REFESH
         private void btn_refesh_Click(object sender, EventArgs e)
         {
             new Thanhtoan(this.manv, null).Show();
             this.Close();
         }
 
+
         //THANH TOÁN TỔNG KẾT BILL
         private void btn_thanhtoan_Click(object sender, EventArgs e)
         {
-            if (txt_phaithu.Text != "0")
+            if (txt_tongsp.Text != "0")
             {
                 insertHOADON();
                 insertCTHD();
@@ -528,6 +521,7 @@ namespace YameStore
             this.Close();
         }
 
+
         //TRỞ VỀ FORM ĐỔI TRẢ
         private void button4_Click(object sender, EventArgs e)
         {
@@ -535,20 +529,20 @@ namespace YameStore
             this.reform.Show();
         }
 
+
         //TEST
         private void show()
         {
-            DataTable dt = new DataTable();
-            SqlDataAdapter sqlDataAdapter1 = new SqlDataAdapter("SELECT COUNT(*) FROM KHACHHANG WHERE MATV='" + txt_matv.Text + "'", con);
-            sqlDataAdapter1.Fill(dt);
-            SqlDataAdapter sqlDataAdapter2 = new SqlDataAdapter("SELECT KHACHHANG.MATV, HOTEN, PHANTRAMGIAM FROM KHACHHANG, VITHANHVIEN WHERE KHACHHANG.MATV = VITHANHVIEN.MATV AND SDT = '" + txt_sdt.Text + "'", con);
-            sqlDataAdapter2.Fill(dt);
-            dataGridView1.DataSource = dt;
+            DataTable dataTable = new DataTable();
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT TOP 1 SUBSTRING(MAHD, 7, 12) AS ExtractString FROM HOADON ORDER BY MAHD DESC", con);
+            sqlDataAdapter.Fill(dataTable);
+            dataGridView1.DataSource = dataTable;
+            int a = Int32.Parse(dataTable.Rows[0][0].ToString());
+            MessageBox.Show(a.ToString());
         }
         private void test_Click(object sender, EventArgs e)
         {
             show();
         }
-
     }
 }
