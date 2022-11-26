@@ -80,15 +80,12 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.test = new System.Windows.Forms.Button();
             this.txt_tongsp = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_soluong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -153,6 +150,7 @@
             // 
             // txt_mahd
             // 
+            this.txt_mahd.BackColor = System.Drawing.Color.White;
             this.txt_mahd.Location = new System.Drawing.Point(130, 71);
             this.txt_mahd.Name = "txt_mahd";
             this.txt_mahd.ReadOnly = true;
@@ -162,6 +160,7 @@
             // 
             // txt_manv
             // 
+            this.txt_manv.BackColor = System.Drawing.Color.White;
             this.txt_manv.Location = new System.Drawing.Point(130, 97);
             this.txt_manv.Name = "txt_manv";
             this.txt_manv.ReadOnly = true;
@@ -171,6 +170,7 @@
             // 
             // txt_matv
             // 
+            this.txt_matv.BackColor = System.Drawing.Color.White;
             this.txt_matv.Location = new System.Drawing.Point(144, 28);
             this.txt_matv.Name = "txt_matv";
             this.txt_matv.Size = new System.Drawing.Size(166, 29);
@@ -284,9 +284,9 @@
             // txt_voucher
             // 
             this.txt_voucher.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_voucher.Location = new System.Drawing.Point(18, 317);
+            this.txt_voucher.Location = new System.Drawing.Point(6, 317);
             this.txt_voucher.Name = "txt_voucher";
-            this.txt_voucher.Size = new System.Drawing.Size(382, 46);
+            this.txt_voucher.Size = new System.Drawing.Size(394, 46);
             this.txt_voucher.TabIndex = 20;
             this.txt_voucher.TextChanged += new System.EventHandler(this.txt_voucher_TextChanged);
             // 
@@ -302,6 +302,7 @@
             // 
             // txt_hoten
             // 
+            this.txt_hoten.BackColor = System.Drawing.Color.White;
             this.txt_hoten.Location = new System.Drawing.Point(144, 58);
             this.txt_hoten.Name = "txt_hoten";
             this.txt_hoten.ReadOnly = true;
@@ -314,7 +315,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(18, 165);
+            this.label12.Location = new System.Drawing.Point(10, 164);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(107, 21);
             this.label12.TabIndex = 24;
@@ -324,7 +325,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(18, 235);
+            this.label13.Location = new System.Drawing.Point(10, 234);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(72, 21);
             this.label13.TabIndex = 25;
@@ -335,10 +336,10 @@
             this.txt_tonghoadon.BackColor = System.Drawing.Color.Blue;
             this.txt_tonghoadon.Font = new System.Drawing.Font("Segoe UI Semibold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txt_tonghoadon.ForeColor = System.Drawing.Color.Lime;
-            this.txt_tonghoadon.Location = new System.Drawing.Point(150, 140);
+            this.txt_tonghoadon.Location = new System.Drawing.Point(158, 140);
             this.txt_tonghoadon.Name = "txt_tonghoadon";
             this.txt_tonghoadon.ReadOnly = true;
-            this.txt_tonghoadon.Size = new System.Drawing.Size(250, 54);
+            this.txt_tonghoadon.Size = new System.Drawing.Size(242, 54);
             this.txt_tonghoadon.TabIndex = 19;
             this.txt_tonghoadon.Text = "0";
             this.txt_tonghoadon.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -348,10 +349,10 @@
             this.txt_giamtructiep.BackColor = System.Drawing.Color.Blue;
             this.txt_giamtructiep.Font = new System.Drawing.Font("Segoe UI Semibold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txt_giamtructiep.ForeColor = System.Drawing.Color.Lime;
-            this.txt_giamtructiep.Location = new System.Drawing.Point(150, 210);
+            this.txt_giamtructiep.Location = new System.Drawing.Point(158, 210);
             this.txt_giamtructiep.Name = "txt_giamtructiep";
             this.txt_giamtructiep.ReadOnly = true;
-            this.txt_giamtructiep.Size = new System.Drawing.Size(250, 54);
+            this.txt_giamtructiep.Size = new System.Drawing.Size(242, 54);
             this.txt_giamtructiep.TabIndex = 28;
             this.txt_giamtructiep.Text = "0";
             this.txt_giamtructiep.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -361,10 +362,10 @@
             this.txt_giamvoucher.BackColor = System.Drawing.Color.Blue;
             this.txt_giamvoucher.Font = new System.Drawing.Font("Segoe UI Semibold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txt_giamvoucher.ForeColor = System.Drawing.Color.Lime;
-            this.txt_giamvoucher.Location = new System.Drawing.Point(150, 420);
+            this.txt_giamvoucher.Location = new System.Drawing.Point(158, 420);
             this.txt_giamvoucher.Name = "txt_giamvoucher";
             this.txt_giamvoucher.ReadOnly = true;
-            this.txt_giamvoucher.Size = new System.Drawing.Size(250, 54);
+            this.txt_giamvoucher.Size = new System.Drawing.Size(242, 54);
             this.txt_giamvoucher.TabIndex = 32;
             this.txt_giamvoucher.Text = "0";
             this.txt_giamvoucher.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -373,7 +374,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label16.Location = new System.Drawing.Point(18, 445);
+            this.label16.Location = new System.Drawing.Point(10, 444);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(108, 21);
             this.label16.TabIndex = 31;
@@ -384,10 +385,10 @@
             this.txt_phaithu.BackColor = System.Drawing.Color.Blue;
             this.txt_phaithu.Font = new System.Drawing.Font("Segoe UI Semibold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txt_phaithu.ForeColor = System.Drawing.Color.Lime;
-            this.txt_phaithu.Location = new System.Drawing.Point(150, 490);
+            this.txt_phaithu.Location = new System.Drawing.Point(158, 490);
             this.txt_phaithu.Name = "txt_phaithu";
             this.txt_phaithu.ReadOnly = true;
-            this.txt_phaithu.Size = new System.Drawing.Size(250, 54);
+            this.txt_phaithu.Size = new System.Drawing.Size(242, 54);
             this.txt_phaithu.TabIndex = 34;
             this.txt_phaithu.Text = "0";
             this.txt_phaithu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -396,7 +397,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label17.Location = new System.Drawing.Point(18, 515);
+            this.label17.Location = new System.Drawing.Point(10, 514);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(67, 21);
             this.label17.TabIndex = 33;
@@ -404,6 +405,7 @@
             // 
             // txt_sdt
             // 
+            this.txt_sdt.BackColor = System.Drawing.Color.White;
             this.txt_sdt.Location = new System.Drawing.Point(442, 28);
             this.txt_sdt.Name = "txt_sdt";
             this.txt_sdt.Size = new System.Drawing.Size(166, 29);
@@ -422,11 +424,12 @@
             // 
             // txt_giamkhachvip
             // 
+            this.txt_giamkhachvip.BackColor = System.Drawing.Color.White;
             this.txt_giamkhachvip.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_giamkhachvip.Location = new System.Drawing.Point(150, 85);
+            this.txt_giamkhachvip.Location = new System.Drawing.Point(158, 85);
             this.txt_giamkhachvip.Name = "txt_giamkhachvip";
             this.txt_giamkhachvip.ReadOnly = true;
-            this.txt_giamkhachvip.Size = new System.Drawing.Size(250, 33);
+            this.txt_giamkhachvip.Size = new System.Drawing.Size(242, 33);
             this.txt_giamkhachvip.TabIndex = 38;
             this.txt_giamkhachvip.TabStop = false;
             this.txt_giamkhachvip.Text = "0";
@@ -437,7 +440,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label19.Location = new System.Drawing.Point(18, 90);
+            this.label19.Location = new System.Drawing.Point(10, 89);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(111, 20);
             this.label19.TabIndex = 37;
@@ -510,10 +513,11 @@
             // 
             // txt_loadvoucher
             // 
-            this.txt_loadvoucher.Location = new System.Drawing.Point(18, 369);
+            this.txt_loadvoucher.BackColor = System.Drawing.Color.White;
+            this.txt_loadvoucher.Location = new System.Drawing.Point(6, 369);
             this.txt_loadvoucher.Name = "txt_loadvoucher";
             this.txt_loadvoucher.ReadOnly = true;
-            this.txt_loadvoucher.Size = new System.Drawing.Size(347, 29);
+            this.txt_loadvoucher.Size = new System.Drawing.Size(359, 29);
             this.txt_loadvoucher.TabIndex = 42;
             this.txt_loadvoucher.TabStop = false;
             // 
@@ -578,7 +582,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(18, 45);
+            this.label14.Location = new System.Drawing.Point(10, 44);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(112, 20);
             this.label14.TabIndex = 47;
@@ -591,9 +595,9 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Tiền mặt",
             "ATM"});
-            this.comboBox1.Location = new System.Drawing.Point(150, 40);
+            this.comboBox1.Location = new System.Drawing.Point(158, 40);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(250, 33);
+            this.comboBox1.Size = new System.Drawing.Size(242, 33);
             this.comboBox1.TabIndex = 46;
             this.comboBox1.Text = "Tiền mặt";
             // 
@@ -623,25 +627,6 @@
             this.label6.TabIndex = 47;
             this.label6.Text = "HOÁ ĐƠN BÁN HÀNG";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(704, 549);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 48;
-            // 
-            // test
-            // 
-            this.test.Location = new System.Drawing.Point(950, 660);
-            this.test.Name = "test";
-            this.test.Size = new System.Drawing.Size(97, 39);
-            this.test.TabIndex = 49;
-            this.test.Text = "test";
-            this.test.UseVisualStyleBackColor = true;
-            this.test.Click += new System.EventHandler(this.test_Click);
-            // 
             // txt_tongsp
             // 
             this.txt_tongsp.BackColor = System.Drawing.Color.White;
@@ -660,8 +645,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1386, 788);
             this.Controls.Add(this.txt_tongsp);
-            this.Controls.Add(this.test);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.numUD_soluong);
             this.Controls.Add(this.btn_xoasp);
@@ -697,7 +680,6 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -756,8 +738,6 @@
         private GroupBox groupBox3;
         private Label label6;
         private Label label14;
-        private DataGridView dataGridView1;
-        private Button test;
         private TextBox txt_valid;
         private TextBox txt_tongsp;
     }

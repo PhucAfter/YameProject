@@ -19,6 +19,7 @@ namespace YameStore
     {
         SqlConnection con = new YameDatabase().getConnection();
         public string manv = "";
+        public bool doitramode = false;
         public Doitra reform;
 
         public Thanhtoan(string manv, Doitra reform)
@@ -35,13 +36,17 @@ namespace YameStore
             ResizeListViewColumns(listView_chitiet);
             if (this.reform != null)
             {
+                this.doitramode = true;
                 button3.Visible = false;
                 button4.Visible = true;
                 txt_voucher.ReadOnly = true;
-                txt_matv.Text = reform.matv;
                 txt_mahd.Text = reform.mahd;
+                txt_matv.Text = reform.matv;
+                txt_matv.ReadOnly = true;
+                txt_sdt.ReadOnly = true;
                 txt_giamkhachvip.Text = "0";
                 btn_refesh.Enabled = false;
+                label16.Text = "Tổng GT đổi hàng";
                 txt_giamvoucher.Text = reform.tongGT;
             }
             else
@@ -65,15 +70,17 @@ namespace YameStore
         private void loadmahd()
         {
             DataTable dataTable = new DataTable();
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT TOP 1 SUBSTRING(MAHD, 7, 12) AS ExtractString FROM HOADON ORDER BY MAHD DESC", con);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT TOP 1 STT FROM HOADON ORDER BY STT DESC", con);
             sqlDataAdapter.Fill(dataTable);
 
             string date = dateTimePicker1.Value.ToString("ddMMyy");
-            string stt = dataTable.Rows[0][0].ToString();
-            string mahd = date + stt;
-            long mahd_tieptheo = long.Parse(mahd);
-            mahd_tieptheo += 1;
-            txt_mahd.Text = mahd_tieptheo.ToString();            
+            string stt = (Int32.Parse(dataTable.Rows[0][0].ToString()) + 1).ToString();
+            for (int i = 0; i < 12-stt.Length; i++)
+            {
+                date += "0";
+            }
+            date += stt;
+            txt_mahd.Text = date;            
         }
 
 
@@ -384,7 +391,7 @@ namespace YameStore
 
 
         //THỰC HIỆN CÂU LỆNH SQL ĐỂ INSERT DỮ LIỆU MỚI VÀO BẢNG HOADON
-        public void insertHOADON()
+        private void insertHOADON()
         {
             con.Open();
             string insertHOADON = @"INSERT INTO dbo.HOADON (MAHD,MANV,MATV) VALUES ('" + txt_mahd.Text + "','" + txt_manv.Text + "','" + txt_matv.Text + "')";
@@ -395,7 +402,7 @@ namespace YameStore
 
 
         //THỰC HIỆN CÂU LỆNH SQL ĐỂ INSERT DỮ LIỆU MỚI VÀO BẢNG CTHD
-        public void insertCTHD()
+        private void insertCTHD()
         {
             con.Open();
             string mahd = txt_mahd.Text;
@@ -417,7 +424,7 @@ namespace YameStore
                     phantramgiam = float.Parse(DataTable.Rows[0][0].ToString());
                 }
 
-                float thanhtien = (soluong * dongia) * (1- phantramgiam);
+                float thanhtien = (soluong * dongia) * (1 - phantramgiam);
 
                 string insertCTHD = @"INSERT INTO dbo.CTHD (MAHD,MASP,MASIZE,SOLUONG,DONGIA,PHANTRAMGIAM,THANHTIEN) VALUES ('" + mahd + "','" + masp + "','" + masize + "'," + soluong.ToString() + "," + dongia.ToString() + "," + phantramgiam.ToString() + "," + thanhtien.ToString() + ")";
                 SqlCommand cmd = new SqlCommand(insertCTHD, con);
@@ -428,7 +435,7 @@ namespace YameStore
 
 
         //THỰC HIỆN CÂU LỆNH SQL ĐỂ INSERT DỮ LIỆU MỚI VÀO BẢNG BANGTHANHTOAN
-        public void insertBANGTHANHTOAN()
+        private void insertBANGTHANHTOAN()
         {
             con.Open();
             string insertBANGTHANHTOAN = @"INSERT INTO dbo.BANGTHANHTOAN (MAHD,TONGHOADON,GIAMTRUCTIEP,GIAMVOUCHER,TIENPHAITHU) VALUES ('" + txt_mahd.Text + "'," + txt_tonghoadon.Text + "," + txt_giamtructiep.Text + "," + txt_giamvoucher.Text + "," + txt_phaithu.Text + ")";
@@ -439,7 +446,7 @@ namespace YameStore
 
 
         //THỰC HIỆN CÂU LỆNH SQL ĐỂ INSERT DỮ LIỆU MỚI VÀO BẢNG VOUCHER
-        public void insertVOUCHER()
+        private void insertVOUCHER()
         {
             con.Open();
 
@@ -457,7 +464,7 @@ namespace YameStore
 
 
         //THỰC HIỆN CÂU LỆNH SQL ĐỂ UPDATE LẦN SỬ DỤNG BẢNG VOUCHER NẾU CÓ ÁP DỤNG VOUCHER
-        public void updateVOUCHER()
+        private void updateVOUCHER()
         {
             if (txt_valid.Text == "✓")
             {
@@ -470,8 +477,8 @@ namespace YameStore
         }
 
 
-        //THỰC HIỆN CÂU LỆNH SQL ĐỂ UPDATE TIỀN TÍCH LUỸ BẢNG THANHVIEN
-        public void updateVITHANHVIEN()
+        //THỰC HIỆN CÂU LỆNH SQL ĐỂ UPDATE TIỀN TÍCH LUỸ BẢNG TRONG THANHVIEN
+        private void updateVITHANHVIEN()
         {
             if (txt_matv.Text != "0")
             {
@@ -483,6 +490,44 @@ namespace YameStore
             }
         }
 
+
+        //THỰC HIỆN CÂU LỆNH SQL ĐỂ UPDATE SỐ LƯỢNG ĐỔI TRẢ TRONG BẢNG CTHD
+        private void updateCTHD()
+        {
+            string[,] Array = reform.getSPdoi();
+            con.Open();
+            for (int i = 0; i < Array.GetLength(0); i++)
+            {
+                string masp = Array[i,0];
+                string masize = Array[i, 1];
+                string soluongdoi = Array[i, 2];
+                
+                string updateCTHD = @"UPDATE dbo.CTHD SET SOLUONGDOI = " + soluongdoi + " WHERE MAHD = '" + txt_mahd.Text + "' AND MASP = '" + masp + "' AND MASIZE = '" + masize + "'";
+                SqlCommand cmd = new SqlCommand(updateCTHD, con);
+                cmd.ExecuteNonQuery();
+            }
+            con.Close();
+        }
+
+        private void updateVOUCHER_money()
+        {
+            DataTable DataTable = new DataTable();
+            SqlDataAdapter SqlDataAdapter = new SqlDataAdapter("SELECT SUDUNG FROM VOUCHER WHERE MAHD='" + txt_mahd.Text + "'", con);
+            SqlDataAdapter.Fill(DataTable);
+            if (DataTable.Rows[0][0].ToString() == "False")
+            {
+                decimal dontoithieu = decimal.Parse(txt_phaithu.Text) / 2000;
+                dontoithieu = Math.Round(dontoithieu, MidpointRounding.AwayFromZero);
+                dontoithieu *= 1000;
+                decimal tiengiamlansau = dontoithieu / 10;
+
+                con.Open();
+                string updateVOUCHER_money = @"UPDATE dbo.VOUCHER SET DONTOITHIEU = DONTOITHIEU + " + dontoithieu.ToString() + ", TIENGIAMLANSAU = TIENGIAMLANSAU + " + tiengiamlansau.ToString() + " WHERE MAHD = '" + txt_mahd.Text + "'";
+                SqlCommand cmd = new SqlCommand(updateVOUCHER_money, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+        }
         //REFESH
         private void btn_refesh_Click(object sender, EventArgs e)
         {
@@ -494,7 +539,7 @@ namespace YameStore
         //THANH TOÁN TỔNG KẾT BILL
         private void btn_thanhtoan_Click(object sender, EventArgs e)
         {
-            if (txt_tongsp.Text != "0")
+            if (txt_tongsp.Text != "0" && !doitramode)
             {
                 insertHOADON();
                 insertCTHD();
@@ -504,7 +549,18 @@ namespace YameStore
                 updateVITHANHVIEN();
                 MessageBox.Show("Thanh toán hoàn tất");
 
-                new Frm_Nhanvien(this.manv).Show();
+                new Thanhtoan(this.manv, null).Show();
+                this.Close();
+            }
+            else if (txt_tongsp.Text != "0" && doitramode)
+            {
+                updateCTHD();
+                insertCTHD();
+                insertBANGTHANHTOAN();
+                updateVOUCHER_money();
+                updateVITHANHVIEN();
+                MessageBox.Show("Thanh toán hoàn tất");
+                new Thanhtoan(this.manv, null).Show();
                 this.Close();
             }
             else
@@ -527,22 +583,6 @@ namespace YameStore
         {
             this.Close();
             this.reform.Show();
-        }
-
-
-        //TEST
-        private void show()
-        {
-            DataTable dataTable = new DataTable();
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT TOP 1 SUBSTRING(MAHD, 7, 12) AS ExtractString FROM HOADON ORDER BY MAHD DESC", con);
-            sqlDataAdapter.Fill(dataTable);
-            dataGridView1.DataSource = dataTable;
-            int a = Int32.Parse(dataTable.Rows[0][0].ToString());
-            MessageBox.Show(a.ToString());
-        }
-        private void test_Click(object sender, EventArgs e)
-        {
-            show();
         }
     }
 }

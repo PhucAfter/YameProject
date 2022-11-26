@@ -200,6 +200,19 @@ namespace YameStore
             this.Hide();
         }
 
+        public string[,] getSPdoi()
+        {
+            string[,] Array = new string[listView1.Items.Count, 3];
+            for (int i = 0; i < listView1.Items.Count; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    Array[i,j] = listView1.Items[i].SubItems[j].Text;
+                }
+            }
+            return Array;
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             new Frm_Nhanvien(this.manv).Show();
