@@ -247,7 +247,11 @@ namespace YameStore
             int giamtructiep = int.Parse(txt_giamtructiep.Text);
             int giamvoucher = int.Parse(txt_giamvoucher.Text);
             int tienphaithu = tonghoadon - giamtructiep - giamvoucher;
-            
+            if (tienphaithu < 0)
+            {
+                txt_phaithu.Text = "0";
+                return;
+            }
             decimal num = (decimal)tienphaithu / 1000;
             num = Math.Round(num, MidpointRounding.AwayFromZero);
             num *= 1000;

@@ -39,9 +39,17 @@ namespace YameStore
             
             if (DataTable1.Rows[0][0].ToString() == "1")
             {
-                SqlDataAdapter SqlDataAdapter1_2 = new SqlDataAdapter("SELECT YEAR(NGAYDOITRA),MONTH(NGAYDOITRA),DAY(NGAYDOITRA) FROM HOADON WHERE MAHD='" + txt_mahd.Text + "'", con);
+                SqlDataAdapter SqlDataAdapter1_2 = new SqlDataAdapter("SELECT SUM(SOLUONGDOI) FROM CTHD WHERE MAHD = '" + txt_mahd.Text + "'", con);
                 SqlDataAdapter1_2.Fill(DataTable1);
-                DateTime ngaybaohanh = new DateTime(Int32.Parse(DataTable1.Rows[1][0].ToString()), Int32.Parse(DataTable1.Rows[1][1].ToString()), Int32.Parse(DataTable1.Rows[1][2].ToString()));
+                if (DataTable1.Rows[1][0].ToString() != "0")
+                {
+                    MessageBox.Show("Hoá đơn đã thực hiện đổi trả trước đó");
+                    return;
+                }
+
+                SqlDataAdapter SqlDataAdapter1_3 = new SqlDataAdapter("SELECT YEAR(NGAYDOITRA),MONTH(NGAYDOITRA),DAY(NGAYDOITRA) FROM HOADON WHERE MAHD='" + txt_mahd.Text + "'", con);
+                SqlDataAdapter1_3.Fill(DataTable1);
+                DateTime ngaybaohanh = new DateTime(Int32.Parse(DataTable1.Rows[2][0].ToString()), Int32.Parse(DataTable1.Rows[2][1].ToString()), Int32.Parse(DataTable1.Rows[2][2].ToString()));
                 DateTime ngayhomnay = dateTimePicker1.Value.Date;
                 int checkhethan = DateTime.Compare(ngayhomnay, ngaybaohanh);
 
