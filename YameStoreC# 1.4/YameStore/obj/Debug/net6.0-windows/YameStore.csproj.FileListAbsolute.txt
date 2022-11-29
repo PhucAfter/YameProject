@@ -547,9 +547,7 @@ C:\Users\Admin\Documents\YameStoreC# 1.4\YameStore\bin\Debug\net6.0-windows\runt
 C:\Users\Admin\Documents\YameStoreC# 1.4\YameStore\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Admin\Documents\YameStoreC# 1.4\YameStore\obj\Debug\net6.0-windows\YameStore.csproj.AssemblyReference.cache
 C:\Users\Admin\Documents\YameStoreC# 1.4\YameStore\obj\Debug\net6.0-windows\YameStore.Bankingonline.resources
-C:\Users\Admin\Documents\YameStoreC# 1.4\YameStore\obj\Debug\net6.0-windows\YameStore.Baohanh.resources
 C:\Users\Admin\Documents\YameStoreC# 1.4\YameStore\obj\Debug\net6.0-windows\YameStore.Chitietdonhangonline.resources
-C:\Users\Admin\Documents\YameStoreC# 1.4\YameStore\obj\Debug\net6.0-windows\YameStore.Dangki.resources
 C:\Users\Admin\Documents\YameStoreC# 1.4\YameStore\obj\Debug\net6.0-windows\YameStore.Donhangonline.resources
 C:\Users\Admin\Documents\YameStoreC# 1.4\YameStore\obj\Debug\net6.0-windows\YameStore.Frm_Nhanvien.resources
 C:\Users\Admin\Documents\YameStoreC# 1.4\YameStore\obj\Debug\net6.0-windows\YameStore.Frm_Quanli.resources
@@ -653,7 +651,6 @@ C:\Users\Admin\Documents\GitHub\YameProject\YameStoreC# 1.4\YameStore\obj\Debug\
 C:\Users\Admin\Documents\GitHub\YameProject\YameStoreC# 1.4\YameStore\obj\Debug\net6.0-windows\YameStore.genruntimeconfig.cache
 C:\Users\Admin\Documents\GitHub\YameProject\YameStoreC# 1.4\YameStore\obj\Debug\net6.0-windows\ref\YameStore.dll
 C:\Users\ADMIN\Documents\GitHub\YameStore\YameStoreC# 1.4\YameStore\obj\Debug\net6.0-windows\YameStore.Quenmatkhau.resources
-<<<<<<< Updated upstream
 F:\YameProject\YameStoreC# 1.4\YameStore\bin\Debug\net6.0-windows\YameStore.exe
 F:\YameProject\YameStoreC# 1.4\YameStore\bin\Debug\net6.0-windows\YameStore.deps.json
 F:\YameProject\YameStoreC# 1.4\YameStore\bin\Debug\net6.0-windows\YameStore.runtimeconfig.json
@@ -695,8 +692,6 @@ F:\YameProject\YameStoreC# 1.4\YameStore\obj\Debug\net6.0-windows\YameStore.pdb
 F:\YameProject\YameStoreC# 1.4\YameStore\obj\Debug\net6.0-windows\YameStore.genruntimeconfig.cache
 F:\YameProject\YameStoreC# 1.4\YameStore\obj\Debug\net6.0-windows\ref\YameStore.dll
 C:\Users\Admin\Documents\GitHub\YameProject\YameStoreC# 1.4\YameStore\obj\Debug\net6.0-windows\YameStore.Doitra.resources
-=======
->>>>>>> Stashed changes
 C:\Users\Admin\OneDrive\Documents\GitHub\YameProject\YameStoreC# 1.4\YameStore\bin\Debug\net6.0-windows\YameStore.exe
 C:\Users\Admin\OneDrive\Documents\GitHub\YameProject\YameStoreC# 1.4\YameStore\bin\Debug\net6.0-windows\YameStore.deps.json
 C:\Users\Admin\OneDrive\Documents\GitHub\YameProject\YameStoreC# 1.4\YameStore\bin\Debug\net6.0-windows\YameStore.runtimeconfig.json
@@ -710,14 +705,8 @@ C:\Users\Admin\OneDrive\Documents\GitHub\YameProject\YameStoreC# 1.4\YameStore\b
 C:\Users\Admin\OneDrive\Documents\GitHub\YameProject\YameStoreC# 1.4\YameStore\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Admin\OneDrive\Documents\GitHub\YameProject\YameStoreC# 1.4\YameStore\obj\Debug\net6.0-windows\YameStore.csproj.AssemblyReference.cache
 C:\Users\Admin\OneDrive\Documents\GitHub\YameProject\YameStoreC# 1.4\YameStore\obj\Debug\net6.0-windows\YameStore.Bankingonline.resources
-<<<<<<< Updated upstream
 C:\Users\Admin\OneDrive\Documents\GitHub\YameProject\YameStoreC# 1.4\YameStore\obj\Debug\net6.0-windows\YameStore.Chitietdonhangonline.resources
 C:\Users\Admin\OneDrive\Documents\GitHub\YameProject\YameStoreC# 1.4\YameStore\obj\Debug\net6.0-windows\YameStore.Doitra.resources
-=======
-C:\Users\Admin\OneDrive\Documents\GitHub\YameProject\YameStoreC# 1.4\YameStore\obj\Debug\net6.0-windows\YameStore.Baohanh.resources
-C:\Users\Admin\OneDrive\Documents\GitHub\YameProject\YameStoreC# 1.4\YameStore\obj\Debug\net6.0-windows\YameStore.Chitietdonhangonline.resources
-C:\Users\Admin\OneDrive\Documents\GitHub\YameProject\YameStoreC# 1.4\YameStore\obj\Debug\net6.0-windows\YameStore.Dangki.resources
->>>>>>> Stashed changes
 C:\Users\Admin\OneDrive\Documents\GitHub\YameProject\YameStoreC# 1.4\YameStore\obj\Debug\net6.0-windows\YameStore.Donhangonline.resources
 C:\Users\Admin\OneDrive\Documents\GitHub\YameProject\YameStoreC# 1.4\YameStore\obj\Debug\net6.0-windows\YameStore.Frm_Nhanvien.resources
 C:\Users\Admin\OneDrive\Documents\GitHub\YameProject\YameStoreC# 1.4\YameStore\obj\Debug\net6.0-windows\YameStore.Frm_Quanli.resources
@@ -742,3 +731,4 @@ C:\Users\Admin\OneDrive\Documents\GitHub\YameProject\YameStoreC# 1.4\YameStore\o
 C:\Users\Admin\OneDrive\Documents\GitHub\YameProject\YameStoreC# 1.4\YameStore\obj\Debug\net6.0-windows\YameStore.pdb
 C:\Users\Admin\OneDrive\Documents\GitHub\YameProject\YameStoreC# 1.4\YameStore\obj\Debug\net6.0-windows\YameStore.genruntimeconfig.cache
 C:\Users\Admin\OneDrive\Documents\GitHub\YameProject\YameStoreC# 1.4\YameStore\obj\Debug\net6.0-windows\ref\YameStore.dll
+C:\Users\Admin\Documents\YameStoreC# 1.4\YameStore\obj\Debug\net6.0-windows\YameStore.Doitra.resources
